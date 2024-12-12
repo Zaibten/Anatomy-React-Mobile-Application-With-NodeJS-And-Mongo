@@ -28,7 +28,8 @@
 # 🌐 Backend Strength:
 •	A robust Node.js backend with Express and MongoDB for secure and efficient data handling.
 
-1. ✨ Whether you're a student, a teacher, or a curious mind, Anatomy is your go-to app for interactive learning, quizzes, and beyond.
+# ✨ Conclusion 🌟
+1. 🌐 Whether you're a student, a teacher, or a curious mind, Anatomy is your go-to app for interactive learning, quizzes, and beyond.
 2. 💡 Your path to mastering anatomy starts here!
 3. 📲 For the complete project or any inquiries, contact me on WhatsApp: +92 336 3506933
 
