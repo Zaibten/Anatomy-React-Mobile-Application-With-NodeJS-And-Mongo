@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "Bioscope",
+    "displayName": "Bioscope",
+    "scheme": "bioscope",
+    "slug": "bioscope",
+    "platforms": ["ios", "android", "web"]
+  }
+}

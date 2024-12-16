@@ -1,0 +1,95 @@
+{
+    "questions": [
+      {
+        "question": "What is the primary function of the kidneys?",
+        "options": ["Filter waste from blood", "Produce insulin", "Store bile", "Control breathing"],
+        "correctAnswer": "Filter waste from blood",
+        "link": "https://www.kidney.org/atoz/content/howkidneyswork"
+      },
+      {
+        "question": "Which organ is part of the urinary system?",
+        "options": ["Liver", "Bladder", "Stomach", "Lungs"],
+        "correctAnswer": "Bladder",
+        "link": "https://www.niddk.nih.gov/health-information/urologic-diseases/urinary-tract-health"
+      },
+      {
+        "question": "What is the primary role of the digestive system?",
+        "options": ["Pump blood", "Break down food", "Produce hormones", "Filter toxins"],
+        "correctAnswer": "Break down food",
+        "link": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/anatomy-of-the-digestive-system"
+      },
+      {
+        "question": "Which enzyme breaks down proteins in the stomach?",
+        "options": ["Amylase", "Pepsin", "Lipase", "Trypsin"],
+        "correctAnswer": "Pepsin",
+        "link": "https://www.ncbi.nlm.nih.gov/books/NBK279255/"
+      },
+      {
+        "question": "Which part of the digestive system absorbs nutrients?",
+        "options": ["Esophagus", "Stomach", "Small intestine", "Large intestine"],
+        "correctAnswer": "Small intestine",
+        "link": "https://www.khanacademy.org/science/biology/human-biology/human-digestive-system/a/digestive-system-article"
+      },
+      {
+        "question": "What connects the kidneys to the bladder?",
+        "options": ["Urethra", "Ureter", "Vein", "Artery"],
+        "correctAnswer": "Ureter",
+        "link": "https://www.mayoclinic.org/diseases-conditions/ureteral-obstruction/symptoms-causes/syc-20354540"
+      },
+      {
+        "question": "What is bile's role in digestion?",
+        "options": ["Breaks down fats", "Neutralizes acid", "Produces enzymes", "Absorbs water"],
+        "correctAnswer": "Breaks down fats",
+        "link": "https://www.sciencedirect.com/topics/medicine-and-dentistry/bile"
+      },
+      {
+        "question": "How much urine does a healthy adult produce daily?",
+        "options": ["0.5 liters", "1-2 liters", "3 liters", "4-5 liters"],
+        "correctAnswer": "1-2 liters",
+        "link": "https://www.medicalnewstoday.com/articles/how-much-urine-can-a-bladder-hold"
+      },
+      {
+        "question": "What is the role of the large intestine?",
+        "options": ["Absorbs nutrients", "Stores bile", "Absorbs water", "Breaks down proteins"],
+        "correctAnswer": "Absorbs water",
+        "link": "https://www.ncbi.nlm.nih.gov/books/NBK279395/"
+      },
+      {
+        "question": "What is the medical term for urination?",
+        "options": ["Defecation", "Micturition", "Excretion", "Filtration"],
+        "correctAnswer": "Micturition",
+        "link": "https://www.britannica.com/science/micturition"
+      },
+      {
+        "question": "Which organ stores bile?",
+        "options": ["Liver", "Gallbladder", "Pancreas", "Kidney"],
+        "correctAnswer": "Gallbladder",
+        "link": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/gallbladder-disease"
+      },
+      {
+        "question": "What is the primary function of the pancreas?",
+        "options": ["Store bile", "Regulate blood sugar", "Filter blood", "Absorb water"],
+        "correctAnswer": "Regulate blood sugar",
+        "link": "https://www.diabetes.org/diabetes/pancreas-function"
+      },
+      {
+        "question": "Which organ is part of both the digestive and endocrine systems?",
+        "options": ["Liver", "Stomach", "Pancreas", "Kidneys"],
+        "correctAnswer": "Pancreas",
+        "link": "https://www.endocrine.org/patient-engagement/endocrine-library/pancreas"
+      },
+      {
+        "question": "What causes kidney stones?",
+        "options": ["High cholesterol", "Calcium deposits", "Dehydration", "Excess sugar"],
+        "correctAnswer": "Calcium deposits",
+        "link": "https://www.kidney.org/atoz/content/kidneystones"
+      },
+      {
+        "question": "What is the primary waste product in urine?",
+        "options": ["Carbon dioxide", "Urea", "Ammonia", "Lactic acid"],
+        "correctAnswer": "Urea",
+        "link": "https://www.medicalnewstoday.com/articles/what-is-urea"
+      }
+    ]
+  }
+  

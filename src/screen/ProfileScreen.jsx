@@ -1,0 +1,312 @@
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Modal,
+  Image,
+  Dimensions,
+  Animated,
+  ScrollView,
+} from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
+
+const { width, height } = Dimensions.get("window");
+
+const Particle = ({ style }) => {
+  const translateX = useState(new Animated.Value(Math.random() * width))[0];
+  const translateY = useState(new Animated.Value(Math.random() * height))[0];
+  const scale = useState(new Animated.Value(Math.random() * 1))[0];
+
+  useEffect(() => {
+    const animateParticle = () => {
+      Animated.parallel([
+        Animated.timing(translateX, {
+          toValue: Math.random() * width,
+          duration: 4000 + Math.random() * 2000,
+          useNativeDriver: true,
+        }),
+        Animated.timing(translateY, {
+          toValue: Math.random() * height,
+          duration: 4000 + Math.random() * 2000,
+          useNativeDriver: true,
+        }),
+        Animated.sequence([
+          Animated.timing(scale, {
+            toValue: 1,
+            duration: 2000,
+            useNativeDriver: true,
+          }),
+          Animated.timing(scale, {
+            toValue: Math.random() * 0.5,
+            duration: 2000,
+            useNativeDriver: true,
+          }),
+        ]),
+      ]).start(() => animateParticle());
+    };
+    animateParticle();
+  }, [translateX, translateY, scale]);
+
+  return (
+    <Animated.View
+      style={[
+        styles.particle,
+        style,
+        {
+          transform: [{ translateX }, { translateY }, { scale }],
+        },
+      ]}
+    />
+  );
+};
+
+const Profile = () => {
+  const [userEmail, setUserEmail] = useState("User");
+  const [username, setUsername] = useState("Username");
+  const [showModal, setShowModal] = useState(false);
+  const navigation = useNavigation();
+
+  const fadeAnim = useState(new Animated.Value(0))[0];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const storedEmail = await AsyncStorage.getItem("userEmail");
+        const storedUsername = await AsyncStorage.getItem("username");
+        if (storedEmail) setUserEmail(storedEmail);
+        if (storedUsername) setUsername(storedUsername);
+      } catch (error) {
+        console.error("Error fetching data from AsyncStorage:", error);
+      }
+    };
+
+    fetchData();
+
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 1000,
+      useNativeDriver: true,
+    }).start();
+  }, [fadeAnim]);
+
+  const confirmLogout = () => setShowModal(true);
+
+  const handleLogout = async () => {
+    try {
+      await AsyncStorage.clear();
+      setShowModal(false);
+      navigation.replace("LOGIN");
+    } catch (error) {
+      console.error("Error clearing AsyncStorage:", error);
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      {/* Particle Effect */}
+      {Array(30)
+        .fill(0)
+        .map((_, index) => (
+          <Particle key={index} />
+        ))}
+
+      <ScrollView contentContainerStyle={styles.content}>
+        {/* Profile Section */}
+        <Animated.View style={[styles.profileCard, { opacity: fadeAnim }]}>
+          <Image
+            source={require("../assets/1-removebg-preview (1).png")}
+            style={styles.profileImage}
+          />
+          <Text style={styles.nameText}>ANATOMY 3D</Text>
+          <Text style={styles.emailText}>Profile Section</Text>
+        </Animated.View>
+
+        {/* User Info Section */}
+        <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
+          <Text style={styles.label}>Your Email</Text>
+          <Text style={styles.value}>{userEmail || "Not available"}</Text>
+        </Animated.View>
+
+        {/* <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
+          <Text style={styles.label}>Username</Text>
+          <Text style={styles.value}>{username || "Not available"}</Text>
+        </Animated.View> */}
+
+        {/* Navigation Links */}
+      <View style={styles.linkContainer}>
+        <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
+          <TouchableOpacity onPress={() => navigation.navigate("ForgetPassword")}>
+            <Text style={styles.linkText}>Forget Password</Text>
+          </TouchableOpacity>
+        </Animated.View>
+
+        <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
+          <TouchableOpacity onPress={() => navigation.navigate("AboutApp")}>
+            <Text style={styles.linkText}>About App</Text>
+          </TouchableOpacity>
+        </Animated.View>
+      </View>
+
+        {/* Logout Button */}
+        <TouchableOpacity style={styles.logoutButton} onPress={confirmLogout}>
+          <Text style={styles.logoutText}>Logout</Text>
+        </TouchableOpacity>
+      </ScrollView>
+
+      {/* Logout Confirmation Modal */}
+      <Modal visible={showModal} transparent={true} animationType="slide">
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContainer}>
+            <Text style={styles.modalTitle}>Confirm Logout</Text>
+            <Text style={styles.modalMessage}>
+              Are you sure you want to log out?
+            </Text>
+            <View style={styles.modalButtonContainer}>
+              <TouchableOpacity
+                style={styles.modalButton}
+                onPress={() => setShowModal(false)}
+              >
+                <Text style={styles.modalButtonText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[styles.modalButton, styles.logoutModalButton]}
+                onPress={handleLogout}
+              >
+                <Text style={styles.modalButtonText}>Logout</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#0D2538",
+  },
+  content: {
+    paddingTop: 40,
+    alignItems: "center",
+  },
+  particle: {
+    position: "absolute",
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: "#FFB84D",
+  },
+  profileCard: {
+    backgroundColor: "#26334B",
+    width: "90%",
+    padding: 20,
+    borderRadius: 15,
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  profileImage: {
+    width: 150,
+    height: 150,
+    borderRadius: 75,
+  },
+  nameText: {
+    fontSize: 24,
+    fontWeight: "700",
+    color: "#FFB84D",
+    marginVertical: 10,
+  },
+  emailText: {
+    fontSize: 18,
+    color: "#A1C4D4",
+  },
+  infoCard: {
+    backgroundColor: "#26334B",
+    width: "90%",
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 15,
+  },
+  label: {
+    color: "#FFB84D",
+    fontSize: 16,
+    marginBottom: 5,
+  },
+  value: {
+    color: "#E4E8E1",
+    fontSize: 16,
+  },
+  linkContainer: {
+    // marginTop: 20,
+  },
+  linkText: {
+    color: "#FFB84D", // Gold color for links
+    fontSize: 16,
+    textAlign: "center",
+    marginBottom: 15,
+    paddingTop:8,
+  },
+  logoutButton: {
+    backgroundColor: "#cc0000",
+    padding: 15,
+    borderRadius: 30,
+    marginTop: 20,
+    width: "90%",
+    alignItems: "center",
+  },
+  logoutText: {
+    color: "#fff",
+    fontSize: 16,
+  },
+  modalOverlay: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+  },
+  modalContainer: {
+    width: "80%",
+    backgroundColor: "#1E2A38",
+    padding: 20,
+    borderRadius: 10,
+    alignItems: "center",
+  },
+  modalTitle: {
+    color: "#FFB84D",
+    fontSize: 20,
+    fontWeight: "700",
+    marginBottom: 10,
+  },
+  modalMessage: {
+    color: "#fff",
+    fontSize: 16,
+    textAlign: "center",
+    marginBottom: 20,
+  },
+  modalButtonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  modalButton: {
+    flex: 1,
+    backgroundColor: "#FFB84D",
+    padding: 10,
+    marginHorizontal: 5,
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  logoutModalButton: {
+    backgroundColor: "#cc0000",
+  },
+  modalButtonText: {
+    color: "#fff",
+    fontSize: 14,
+  },
+});
+
+export default Profile;
