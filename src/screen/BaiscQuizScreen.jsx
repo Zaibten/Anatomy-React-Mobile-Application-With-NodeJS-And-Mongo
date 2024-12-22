@@ -32,7 +32,7 @@ const Quiz = () => {
   const [answerStatus, setAnswerStatus] = useState(null);
   const correctIcon = require("../assets/check.png");
   const incorrectIcon = require("../assets/cross.png");
-  const [timer, setTimer] = useState(60);
+  const [timer, setTimer] = useState(120);
   const [userEmail, setUserEmail] = useState("");
   const [userToken, setUserToken] = useState(""); // Store user token
   const navigation = useNavigation();
@@ -53,7 +53,7 @@ const Quiz = () => {
       setTimeout(() => {
         setShowScore(true); // Show the score after completion
       }, 500); // Delay showing score
-      setTimer(60); // Reset timer for the next question if needed, but won't trigger a quiz restart
+      setTimer(120); // Reset timer for the next question if needed, but won't trigger a quiz restart
     }
   }, [timer]);
 
@@ -108,7 +108,7 @@ const Quiz = () => {
   
 
   useEffect(() => {
-    const shuffledQuestions = quizData.questions.sort(() => Math.random() - 0.5).slice(0, 10);
+    const shuffledQuestions = quizData.questions.sort(() => Math.random() - 0.5).slice(0, 20);
     setQuestions(shuffledQuestions);
   }, []);
 
@@ -119,8 +119,8 @@ const Quiz = () => {
   }, [quizCompleted, questions]);
 
   const loadRandomQuestion = () => {
-    if (answeredQuestions.length === 10) {
-      setQuizCompleted(true); // Set quiz as completed after 10 questions
+    if (answeredQuestions.length === 20) {
+      setQuizCompleted(true); // Set quiz as completed after 20 questions
       setTimeout(() => {
         setShowScore(true); // Show score after completion
       }, 500);
@@ -170,7 +170,7 @@ const Quiz = () => {
 
   const animateProgress = () => {
     Animated.timing(progress, {
-      toValue: answeredQuestions.length / 10,
+      toValue: answeredQuestions.length / 20,
       duration: 500,
       easing: Easing.linear,
       useNativeDriver: false,
@@ -203,10 +203,10 @@ const Quiz = () => {
        <ParticleEffect imageSource={require("../assets/particles.png")} />
         <ScrollView contentContainerStyle={styles.resultContainer}>
           <Text style={styles.resultText}>🎉 Quiz Completed!</Text>
-          <Text style={styles.resultText}>Your Score: {score}/10</Text>
-          {score >= 7 ? (
+          <Text style={styles.resultText}>Your Score: {score}/20</Text>
+          {score >= 17 ? (
             <Text style={styles.emoji}>🏆</Text>
-          ) : score >= 4 ? (
+          ) : score >= 14 ? (
             <Text style={styles.emoji}>👏</Text>
           ) : (
             <Text style={styles.emoji}>💡</Text>
@@ -240,7 +240,7 @@ const Quiz = () => {
   if (showScore) {
     return (
       <View style={styles.container}>
-        <Text style={styles.resultText}>Your Score: {score}/10</Text>
+        <Text style={styles.resultText}>Your Score: {score}/20</Text>
       </View>
     );
   }

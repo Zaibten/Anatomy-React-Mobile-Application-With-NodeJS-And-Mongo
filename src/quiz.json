@@ -2,7 +2,12 @@
   "questions": [
     {
       "question": "What is the primary function of the kidneys?",
-      "options": ["Filter waste from blood", "Produce insulin", "Store bile", "Control breathing"],
+      "options": [
+        "Filter waste from blood",
+        "Produce insulin",
+        "Store bile",
+        "Control breathing"
+      ],
       "correctAnswer": "Filter waste from blood",
       "link": "https://www.kidneyfund.org/all-about-kidneys"
     },
@@ -14,7 +19,12 @@
     },
     {
       "question": "What is the primary role of the digestive system?",
-      "options": ["Pump blood", "Break down food", "Produce hormones", "Filter toxins"],
+      "options": [
+        "Pump blood",
+        "Break down food",
+        "Produce hormones",
+        "Filter toxins"
+      ],
       "correctAnswer": "Break down food",
       "link": "https://www.hopkinsmedicine.org/health/wellness-and-prevention/your-digestive-system-how-it-works"
     },
@@ -38,7 +48,12 @@
     },
     {
       "question": "What is bile's role in digestion?",
-      "options": ["Breaks down fats", "Neutralizes acid", "Produces enzymes", "Absorbs water"],
+      "options": [
+        "Breaks down fats",
+        "Neutralizes acid",
+        "Produces enzymes",
+        "Absorbs water"
+      ],
       "correctAnswer": "Breaks down fats",
       "link": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/bile-duct-obstruction"
     },
@@ -50,7 +65,12 @@
     },
     {
       "question": "What is the role of the large intestine?",
-      "options": ["Absorbs nutrients", "Stores bile", "Absorbs water", "Breaks down proteins"],
+      "options": [
+        "Absorbs nutrients",
+        "Stores bile",
+        "Absorbs water",
+        "Breaks down proteins"
+      ],
       "correctAnswer": "Absorbs water",
       "link": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/large-intestine-obstruction"
     },
@@ -68,7 +88,12 @@
     },
     {
       "question": "What is the primary function of the pancreas?",
-      "options": ["Store bile", "Regulate blood sugar", "Filter blood", "Absorb water"],
+      "options": [
+        "Store bile",
+        "Regulate blood sugar",
+        "Filter blood",
+        "Absorb water"
+      ],
       "correctAnswer": "Regulate blood sugar",
       "link": "https://www.diabetes.org/diabetes/pancreas-function"
     },
@@ -80,7 +105,12 @@
     },
     {
       "question": "What causes kidney stones?",
-      "options": ["High cholesterol", "Calcium deposits", "Dehydration", "Excess sugar"],
+      "options": [
+        "High cholesterol",
+        "Calcium deposits",
+        "Dehydration",
+        "Excess sugar"
+      ],
       "correctAnswer": "Dehydration",
       "link": "https://www.urologyhealth.org/urologic-conditions/kidney-stones"
     },
@@ -98,31 +128,56 @@
     },
     {
       "question": "What is the role of hemoglobin in red blood cells?",
-      "options": ["Transport oxygen", "Carry nutrients", "Produce energy", "Filter waste"],
+      "options": [
+        "Transport oxygen",
+        "Carry nutrients",
+        "Produce energy",
+        "Filter waste"
+      ],
       "correctAnswer": "Transport oxygen",
       "link": "https://www.medicalnewstoday.com/articles/hemoglobin"
     },
     {
       "question": "What is the function of the heart valves?",
-      "options": ["Prevent backflow of blood", "Store oxygen", "Break down nutrients", "Generate blood pressure"],
+      "options": [
+        "Prevent backflow of blood",
+        "Store oxygen",
+        "Break down nutrients",
+        "Generate blood pressure"
+      ],
       "correctAnswer": "Prevent backflow of blood",
       "link": "https://www.mayoclinic.org/diseases-conditions/heart-valve-disease/symptoms-causes/syc-20353727"
     },
     {
       "question": "Which chamber of the heart pumps blood to the lungs?",
-      "options": ["Left atrium", "Right atrium", "Right ventricle", "Left ventricle"],
+      "options": [
+        "Left atrium",
+        "Right atrium",
+        "Right ventricle",
+        "Left ventricle"
+      ],
       "correctAnswer": "Right ventricle",
       "link": "https://my.clevelandclinic.org/health/body/21766-right-ventricle"
     },
     {
       "question": "What is the main function of white blood cells?",
-      "options": ["Transport oxygen", "Fight infection", "Clot blood", "Provide energy"],
+      "options": [
+        "Transport oxygen",
+        "Fight infection",
+        "Clot blood",
+        "Provide energy"
+      ],
       "correctAnswer": "Fight infection",
       "link": "https://www.medicalnewstoday.com/articles/white-blood-cells"
     },
     {
       "question": "What are platelets responsible for?",
-      "options": ["Carrying oxygen", "Clotting blood", "Fighting infection", "Filtering blood"],
+      "options": [
+        "Carrying oxygen",
+        "Clotting blood",
+        "Fighting infection",
+        "Filtering blood"
+      ],
       "correctAnswer": "Clotting blood",
       "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3212331/"
     },
@@ -150,603 +205,812 @@
       "correctAnswer": "Kidney",
       "link": "https://www.kidney.org/atoz/content/how-do-kidneys-work"
     },
-
     {
-      "questions": [
-        {
-          "question": "What is the primary function of red blood cells in the circulatory system?",
-          "options": ["Transport oxygen", "Fight infections", "Clot blood", "Produce hormones"],
-          "correctAnswer": "Transport oxygen",
-          "link": "https://www.nhlbi.nih.gov/health/red-blood-cells"
-        },
-        {
-          "question": "What part of the heart pumps oxygen-rich blood to the body?",
-          "options": ["Right atrium", "Left ventricle", "Right ventricle", "Left atrium"],
-          "correctAnswer": "Left ventricle",
-          "link": "https://www.mayoclinic.org/tests-procedures/heart-surgery/about/pac-20384794"
-        },
-        {
-          "question": "Which structure prevents food from entering the windpipe?",
-          "options": ["Esophagus", "Epiglottis", "Pharynx", "Larynx"],
-          "correctAnswer": "Epiglottis",
-          "link": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/epiglottitis"
-        },
-        {
-          "question": "What is the role of platelets in the blood?",
-          "options": ["Fight infections", "Clot blood", "Carry oxygen", "Absorb nutrients"],
-          "correctAnswer": "Clot blood",
-          "link": "https://www.hematology.org/education/patients/blood-clots/platelets"
-        },
-        {
-          "question": "Which vessel carries deoxygenated blood to the lungs?",
-          "options": ["Pulmonary artery", "Pulmonary vein", "Aorta", "Vena cava"],
-          "correctAnswer": "Pulmonary artery",
-          "link": "https://www.ncbi.nlm.nih.gov/medgen/67589"
-        },
-        {
-          "question": "What is the primary function of the small intestine?",
-          "options": ["Store bile", "Absorb nutrients", "Filter waste", "Digest proteins"],
-          "correctAnswer": "Absorb nutrients",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279401/"
-        },
-        {
-          "question": "Which hormone regulates water balance in the kidneys?",
-          "options": ["Insulin", "Antidiuretic hormone (ADH)", "Thyroxine", "Adrenaline"],
-          "correctAnswer": "Antidiuretic hormone (ADH)",
-          "link": "https://www.hormone.org/your-health-and-hormones/glands-and-hormones-a-to-z/hormones/antidiuretic-hormone"
-        },
-        {
-          "question": "What is the functional unit of the kidney?",
-          "options": ["Nephron", "Ureter", "Glomerulus", "Bowman's capsule"],
-          "correctAnswer": "Nephron",
-          "link": "https://www.kidney.org/atoz/content/nephron"
-        },
-        {
-          "question": "What is the role of the coronary arteries?",
-          "options": ["Carry blood to the lungs", "Supply blood to the heart muscle", "Remove carbon dioxide", "Absorb nutrients"],
-          "correctAnswer": "Supply blood to the heart muscle",
-          "link": "https://www.heart.org/en/health-topics/heart-attack/what-are-coronary-arteries"
-        },
-        {
-          "question": "What is the main function of the liver in digestion?",
-          "options": ["Produce bile", "Absorb nutrients", "Store waste", "Filter toxins"],
-          "correctAnswer": "Produce bile",
-          "link": "https://www.mayoclinic.org/tests-procedures/liver-function-tests/about/pac-20394595"
-        },
-        {
-          "question": "What is the largest artery in the human body?",
-          "options": ["Carotid artery", "Aorta", "Pulmonary artery", "Femoral artery"],
-          "correctAnswer": "Aorta",
-          "link": "https://www.ncbi.nlm.nih.gov/medgen/38807"
-        },
-        {
-          "question": "What is the name of the muscular contractions that move food through the digestive system?",
-          "options": ["Peristalsis", "Absorption", "Secretion", "Digestion"],
-          "correctAnswer": "Peristalsis",
-          "link": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/peristalsis"
-        },
-        {
-          "question": "What component of blood helps fight infections?",
-          "options": ["Red blood cells", "Platelets", "White blood cells", "Plasma"],
-          "correctAnswer": "White blood cells",
-          "link": "https://www.nhlbi.nih.gov/health-topics/blood-components"
-        },
-        {
-          "question": "Which organ is responsible for filtering blood in the body?",
-          "options": ["Kidneys", "Heart", "Liver", "Lungs"],
-          "correctAnswer": "Kidneys",
-          "link": "https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work"
-        },
-        {
-          "question": "Where does digestion begin in the human body?",
-          "options": ["Stomach", "Small intestine", "Mouth", "Esophagus"],
-          "correctAnswer": "Mouth",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279394/"
-        },
-        {
-          "question": "Which organ produces insulin?",
-          "options": ["Pancreas", "Liver", "Kidney", "Stomach"],
-          "correctAnswer": "Pancreas",
-          "link": "https://www.diabetes.org/diabetes/pancreas-function"
-        },
-        {
-          "question": "What is the role of hemoglobin in red blood cells?",
-          "options": ["Clot blood", "Transport oxygen", "Absorb nutrients", "Fight infections"],
-          "correctAnswer": "Transport oxygen",
-          "link": "https://www.nhlbi.nih.gov/health/hemoglobin"
-        },
-        {
-          "question": "What is the main function of the urinary bladder?",
-          "options": ["Filter waste", "Store urine", "Produce urine", "Excrete urea"],
-          "correctAnswer": "Store urine",
-          "link": "https://www.urologyhealth.org/urologic-conditions/bladder-health"
-        },
-        {
-          "question": "Which part of the heart receives deoxygenated blood from the body?",
-          "options": ["Right atrium", "Left atrium", "Right ventricle", "Left ventricle"],
-          "correctAnswer": "Right atrium",
-          "link": "https://www.ncbi.nlm.nih.gov/medgen/67589"
-        },
-        {
-          "question": "What structure stores and concentrates bile?",
-          "options": ["Liver", "Gallbladder", "Pancreas", "Small intestine"],
-          "correctAnswer": "Gallbladder",
-          "link": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/gallbladder-disease"
-        },
-        {
-          "question": "What is the primary purpose of saliva in digestion?",
-          "options": ["Breaks down fats", "Neutralizes acid", "Moistens food", "Absorbs nutrients"],
-          "correctAnswer": "Moistens food",
-          "link": "https://www.medicalnewstoday.com/articles/what-is-saliva"
-        },
-        {
-          "question": "What organ regulates blood pressure by releasing renin?",
-          "options": ["Heart", "Kidney", "Liver", "Lungs"],
-          "correctAnswer": "Kidney",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279327/"
-        },
-        {
-          "question": "Which blood vessels carry oxygen-rich blood from the lungs to the heart?",
-          "options": ["Pulmonary arteries", "Pulmonary veins", "Aorta", "Vena cava"],
-          "correctAnswer": "Pulmonary veins",
-          "link": "https://www.heart.org/en/health-topics/how-the-heart-works"
-        },
-        {
-          "question": "What is the role of the spleen in the circulatory system?",
-          "options": ["Produce bile", "Filter blood", "Store vitamins", "Regulate hormones"],
-          "correctAnswer": "Filter blood",
-          "link": "https://www.mayoclinic.org/symptoms/splenomegaly/basics/definition/sym-20050850"
-        },
-        {
-          "question": "What does the stomach secrete to aid in protein digestion?",
-          "options": ["Pepsin", "Amylase", "Lipase", "Bile"],
-          "correctAnswer": "Pepsin",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279255/"
-        }
-      ]
+      "question": "What is the primary function of red blood cells in the circulatory system?",
+      "options": [
+        "Transport oxygen",
+        "Fight infections",
+        "Clot blood",
+        "Produce hormones"
+      ],
+      "correctAnswer": "Transport oxygen",
+      "link": "https://www.nhlbi.nih.gov/health/red-blood-cells"
     },
     {
-      "questions": [
-        {
-          "question": "What is the main component of plasma in the blood?",
-          "options": ["Proteins", "Water", "Glucose", "Salts"],
-          "correctAnswer": "Water",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279393/"
-        },
-        {
-          "question": "Which enzyme in the stomach begins the digestion of proteins?",
-          "options": ["Pepsin", "Trypsin", "Amylase", "Lipase"],
-          "correctAnswer": "Pepsin",
-          "link": "https://www.medicalnewstoday.com/articles/pepsin"
-        },
-        {
-          "question": "What organ stores vitamins A, D, E, and K?",
-          "options": ["Kidney", "Liver", "Heart", "Pancreas"],
-          "correctAnswer": "Liver",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279391/"
-        },
-        {
-          "question": "What part of the nephron filters blood?",
-          "options": ["Glomerulus", "Loop of Henle", "Bowman's capsule", "Collecting duct"],
-          "correctAnswer": "Glomerulus",
-          "link": "https://www.kidney.org/atoz/content/glomerulus"
-        },
-        {
-          "question": "Which structure in the small intestine increases surface area for absorption?",
-          "options": ["Villi", "Rugae", "Alveoli", "Cilia"],
-          "correctAnswer": "Villi",
-          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4209942/"
-        },
-        {
-          "question": "What is the role of the pyloric sphincter?",
-          "options": ["Control bile release", "Prevent acid reflux", "Regulate food flow to small intestine", "Secrete digestive enzymes"],
-          "correctAnswer": "Regulate food flow to small intestine",
-          "link": "https://www.ncbi.nlm.nih.gov/medgen/55851"
-        },
-        {
-          "question": "Which part of the large intestine absorbs water?",
-          "options": ["Cecum", "Colon", "Rectum", "Appendix"],
-          "correctAnswer": "Colon",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK519522/"
-        },
-        {
-          "question": "What is the primary function of lymph in the circulatory system?",
-          "options": ["Transport oxygen", "Remove waste", "Carry white blood cells", "Distribute nutrients"],
-          "correctAnswer": "Carry white blood cells",
-          "link": "https://www.cancer.org/cancer/cancer-basics/lymph-nodes-and-cancer.html"
-        },
-        {
-          "question": "What substance is produced in the stomach to kill bacteria?",
-          "options": ["Bile", "Hydrochloric acid", "Saliva", "Pepsin"],
-          "correctAnswer": "Hydrochloric acid",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK441930/"
-        },
-        {
-          "question": "What is the purpose of bile salts in digestion?",
-          "options": ["Digest proteins", "Emulsify fats", "Neutralize acid", "Absorb glucose"],
-          "correctAnswer": "Emulsify fats",
-          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5468756/"
-        },
-        {
-          "question": "What is the name of the process by which the kidneys produce urine?",
-          "options": ["Filtration", "Reabsorption", "Secretion", "Excretion"],
-          "correctAnswer": "Filtration",
-          "link": "https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work"
-        },
-        {
-          "question": "Which blood vessels have valves to prevent backflow?",
-          "options": ["Arteries", "Capillaries", "Veins", "Arterioles"],
-          "correctAnswer": "Veins",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK470443/"
-        },
-        {
-          "question": "What is the role of the esophagus in digestion?",
-          "options": ["Store food", "Transport food", "Absorb nutrients", "Produce enzymes"],
-          "correctAnswer": "Transport food",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK459336/"
-        },
-        {
-          "question": "Which part of the respiratory system is shared with the digestive system?",
-          "options": ["Pharynx", "Trachea", "Esophagus", "Bronchi"],
-          "correctAnswer": "Pharynx",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK459353/"
-        },
-        {
-          "question": "Which chamber of the heart receives oxygenated blood from the lungs?",
-          "options": ["Right atrium", "Left atrium", "Right ventricle", "Left ventricle"],
-          "correctAnswer": "Left atrium",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279326/"
-        },
-        {
-          "question": "What is the main function of the rectum?",
-          "options": ["Absorb nutrients", "Store waste", "Produce bile", "Filter toxins"],
-          "correctAnswer": "Store waste",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK499973/"
-        },
-        {
-          "question": "What is the structural difference between arteries and veins?",
-          "options": ["Valves in veins", "Thicker walls in veins", "Valves in arteries", "Thicker walls in capillaries"],
-          "correctAnswer": "Valves in veins",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK531493/"
-        },
-        {
-          "question": "What is the primary component of gastric juice?",
-          "options": ["Amylase", "Bile", "Hydrochloric acid", "Lipase"],
-          "correctAnswer": "Hydrochloric acid",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK441930/"
-        },
-        {
-          "question": "What is the primary function of the hepatic portal vein?",
-          "options": ["Carry bile to the stomach", "Transport blood from the liver to the heart", "Carry nutrient-rich blood to the liver", "Remove toxins from the liver"],
-          "correctAnswer": "Carry nutrient-rich blood to the liver",
-          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5441273/"
-        },
-        {
-          "question": "Which part of the nephron is responsible for concentrating urine?",
-          "options": ["Loop of Henle", "Glomerulus", "Proximal tubule", "Collecting duct"],
-          "correctAnswer": "Loop of Henle",
-          "link": "https://www.kidney.org/atoz/content/nephron"
-        },
-        {
-          "question": "What prevents acid in the stomach from damaging the stomach wall?",
-          "options": ["Bile", "Enzymes", "Mucus", "Hormones"],
-          "correctAnswer": "Mucus",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK441930/"
-        },
-        {
-          "question": "What is the main function of the appendix in humans?",
-          "options": ["Digest cellulose", "Store waste", "No significant function", "Absorb water"],
-          "correctAnswer": "No significant function",
-          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5440782/"
-        },
-        {
-          "question": "What is the functional unit of the liver?",
-          "options": ["Nephron", "Hepatocyte", "Lobule", "Sinusoid"],
-          "correctAnswer": "Lobule",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK532268/"
-        },
-        {
-          "question": "What is the function of the urethra in the urinary system?",
-          "options": ["Filter blood", "Store urine", "Transport urine out of the body", "Regulate water balance"],
-          "correctAnswer": "Transport urine out of the body",
-          "link": "https://www.urologyhealth.org/urologic-conditions/urethral-stricture"
-        },
-        {
-          "question": "Which vitamin is synthesized by the bacteria in the large intestine?",
-          "options": ["Vitamin C", "Vitamin B12", "Vitamin K", "Vitamin D"],
-          "correctAnswer": "Vitamin K",
-          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5468756/"
-        }
-      ]
+      "question": "What part of the heart pumps oxygen-rich blood to the body?",
+      "options": [
+        "Right atrium",
+        "Left ventricle",
+        "Right ventricle",
+        "Left atrium"
+      ],
+      "correctAnswer": "Left ventricle",
+      "link": "https://www.mayoclinic.org/tests-procedures/heart-surgery/about/pac-20384794"
     },
     {
-      "questions": [
-        {
-          "question": "What is the smallest structural and functional unit of life?",
-          "options": ["Tissue", "Cell", "Organ", "Molecule"],
-          "correctAnswer": "Cell",
-          "link": "https://www.britannica.com/science/cell-biology"
-        },
-        {
-          "question": "What type of blood cells are responsible for fighting infections?",
-          "options": ["Red blood cells", "White blood cells", "Platelets", "Plasma cells"],
-          "correctAnswer": "White blood cells",
-          "link": "https://www.medicalnewstoday.com/articles/what-are-white-blood-cells"
-        },
-        {
-          "question": "Which hormone regulates blood sugar levels?",
-          "options": ["Insulin", "Adrenaline", "Cortisol", "Glucagon"],
-          "correctAnswer": "Insulin",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279053/"
-        },
-        {
-          "question": "What is the largest artery in the human body?",
-          "options": ["Aorta", "Carotid artery", "Pulmonary artery", "Femoral artery"],
-          "correctAnswer": "Aorta",
-          "link": "https://www.britannica.com/science/aorta"
-        },
-        {
-          "question": "Which organ is primarily responsible for detoxification in the body?",
-          "options": ["Kidneys", "Liver", "Lungs", "Spleen"],
-          "correctAnswer": "Liver",
-          "link": "https://www.medicalnewstoday.com/articles/322380"
-        },
-        {
-          "question": "What is the primary function of hemoglobin in red blood cells?",
-          "options": ["Carry oxygen", "Clot blood", "Fight infections", "Regulate temperature"],
-          "correctAnswer": "Carry oxygen",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK226873/"
-        },
-        {
-          "question": "Which part of the brain controls balance and coordination?",
-          "options": ["Cerebrum", "Cerebellum", "Brainstem", "Hypothalamus"],
-          "correctAnswer": "Cerebellum",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK540992/"
-        },
-        {
-          "question": "What is the function of the epiglottis in the respiratory system?",
-          "options": ["Filter air", "Produce mucus", "Prevent food from entering the trachea", "Absorb oxygen"],
-          "correctAnswer": "Prevent food from entering the trachea",
-          "link": "https://www.britannica.com/science/epiglottis"
-        },
-        {
-          "question": "What is the powerhouse of the cell?",
-          "options": ["Ribosome", "Mitochondria", "Nucleus", "Golgi apparatus"],
-          "correctAnswer": "Mitochondria",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK547729/"
-        },
-        {
-          "question": "What is the primary role of the pancreas in digestion?",
-          "options": ["Secrete insulin", "Neutralize stomach acid", "Produce digestive enzymes", "Store bile"],
-          "correctAnswer": "Produce digestive enzymes",
-          "link": "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/definition-facts"
-        },
-        {
-          "question": "What is the role of platelets in the blood?",
-          "options": ["Transport oxygen", "Clot blood", "Fight infections", "Regulate blood pressure"],
-          "correctAnswer": "Clot blood",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279393/"
-        },
-        {
-          "question": "What is the name of the protein that gives skin its strength and elasticity?",
-          "options": ["Collagen", "Keratin", "Elastin", "Actin"],
-          "correctAnswer": "Collagen",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK539844/"
-        },
-        {
-          "question": "Which part of the eye regulates the amount of light entering?",
-          "options": ["Lens", "Pupil", "Cornea", "Iris"],
-          "correctAnswer": "Iris",
-          "link": "https://www.britannica.com/science/iris-eye"
-        },
-        {
-          "question": "Which mineral is important for strong bones and teeth?",
-          "options": ["Iron", "Potassium", "Calcium", "Magnesium"],
-          "correctAnswer": "Calcium",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK560799/"
-        },
-        {
-          "question": "Which gland produces melatonin, a hormone that regulates sleep?",
-          "options": ["Thyroid", "Pineal gland", "Adrenal gland", "Pituitary gland"],
-          "correctAnswer": "Pineal gland",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK554608/"
-        },
-        {
-          "question": "What is the function of alveoli in the lungs?",
-          "options": ["Filter air", "Exchange gases", "Produce mucus", "Warm air"],
-          "correctAnswer": "Exchange gases",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK536960/"
-        },
-        {
-          "question": "What is the term for the study of tissues?",
-          "options": ["Histology", "Cytology", "Pathology", "Anatomy"],
-          "correctAnswer": "Histology",
-          "link": "https://www.britannica.com/science/histology"
-        },
-        {
-          "question": "What is the function of the eustachian tube in the ear?",
-          "options": ["Transmit sound", "Maintain pressure balance", "Detect vibrations", "Protect inner ear"],
-          "correctAnswer": "Maintain pressure balance",
-          "link": "https://www.britannica.com/science/eustachian-tube"
-        },
-        {
-          "question": "Which vitamin is essential for blood clotting?",
-          "options": ["Vitamin C", "Vitamin D", "Vitamin K", "Vitamin E"],
-          "correctAnswer": "Vitamin K",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK541081/"
-        },
-        {
-          "question": "Which organ system is responsible for producing hormones?",
-          "options": ["Nervous system", "Endocrine system", "Digestive system", "Circulatory system"],
-          "correctAnswer": "Endocrine system",
-          "link": "https://www.britannica.com/science/endocrine-system"
-        },
-        {
-          "question": "What is the role of the hypothalamus in the brain?",
-          "options": ["Regulate emotions", "Control homeostasis", "Coordinate balance", "Store memories"],
-          "correctAnswer": "Control homeostasis",
-          "link": "https://www.britannica.com/science/hypothalamus"
-        },
-        {
-          "question": "What is the main function of the spleen?",
-          "options": ["Filter blood", "Store bile", "Produce insulin", "Regulate hormones"],
-          "correctAnswer": "Filter blood",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK537311/"
-        },
-        {
-          "question": "What is the role of the thymus gland in the immune system?",
-          "options": ["Produce T-cells", "Filter lymph", "Store antibodies", "Produce red blood cells"],
-          "correctAnswer": "Produce T-cells",
-          "link": "https://www.britannica.com/science/thymus"
-        },
-        {
-          "question": "Which part of the ear converts sound waves into electrical signals?",
-          "options": ["Cochlea", "Eardrum", "Auditory canal", "Ossicles"],
-          "correctAnswer": "Cochlea",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279409/"
-        },
-        {
-          "question": "What is the main function of the lymphatic system?",
-          "options": ["Transport oxygen", "Drain excess fluids", "Produce red blood cells", "Store nutrients"],
-          "correctAnswer": "Drain excess fluids",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK538394/"
-        }
-      ]
+      "question": "Which structure prevents food from entering the windpipe?",
+      "options": ["Esophagus", "Epiglottis", "Pharynx", "Larynx"],
+      "correctAnswer": "Epiglottis",
+      "link": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/epiglottitis"
     },
     {
-      "questions": [
-        {
-          "question": "What is the primary function of the tricuspid valve in the heart?",
-          "options": ["Prevent backflow of blood", "Pump blood to the lungs", "Oxygenate blood", "Control blood pressure"],
-          "correctAnswer": "Prevent backflow of blood",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK537207/"
-        },
-        {
-          "question": "Which organ produces bile to aid in digestion?",
-          "options": ["Liver", "Stomach", "Pancreas", "Gallbladder"],
-          "correctAnswer": "Liver",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279391/"
-        },
-        {
-          "question": "Which part of the digestive system is primarily responsible for water absorption?",
-          "options": ["Small intestine", "Large intestine", "Stomach", "Esophagus"],
-          "correctAnswer": "Large intestine",
-          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5557573/"
-        },
-        {
-          "question": "What is the primary role of the vena cava?",
-          "options": ["Transport oxygenated blood to the body", "Carry deoxygenated blood to the heart", "Filter toxins from blood", "Supply nutrients to tissues"],
-          "correctAnswer": "Carry deoxygenated blood to the heart",
-          "link": "https://www.ncbi.nlm.nih.gov/medgen/67589"
-        },
-        {
-          "question": "What is the function of the pyloric sphincter?",
-          "options": ["Control food passage to small intestine", "Store bile", "Secrete digestive enzymes", "Absorb nutrients"],
-          "correctAnswer": "Control food passage to small intestine",
-          "link": "https://www.ncbi.nlm.nih.gov/medgen/55851"
-        },
-        {
-          "question": "Which layer of the heart wall is responsible for contraction?",
-          "options": ["Epicardium", "Myocardium", "Endocardium", "Pericardium"],
-          "correctAnswer": "Myocardium",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK538474/"
-        },
-        {
-          "question": "Which structure in the nephron is involved in filtering blood?",
-          "options": ["Glomerulus", "Loop of Henle", "Proximal tubule", "Collecting duct"],
-          "correctAnswer": "Glomerulus",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK555856/"
-        },
-        {
-          "question": "What is the function of the sinoatrial (SA) node in the heart?",
-          "options": ["Pump blood to lungs", "Act as a pacemaker", "Filter blood", "Contract the ventricles"],
-          "correctAnswer": "Act as a pacemaker",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK538511/"
-        },
-        {
-          "question": "What type of blood vessel carries blood away from the heart?",
-          "options": ["Veins", "Arteries", "Capillaries", "Lymph vessels"],
-          "correctAnswer": "Arteries",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK538473/"
-        },
-        {
-          "question": "Which part of the brain regulates heart rate and breathing?",
-          "options": ["Cerebrum", "Cerebellum", "Medulla oblongata", "Pons"],
-          "correctAnswer": "Medulla oblongata",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK538486/"
-        },
-        {
-          "question": "What is the primary function of the Bowman's capsule in the nephron?",
-          "options": ["Filter blood", "Absorb water", "Concentrate urine", "Regulate pH"],
-          "correctAnswer": "Filter blood",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK538287/"
-        },
-        {
-          "question": "Which digestive enzyme is secreted by the salivary glands?",
-          "options": ["Amylase", "Lipase", "Pepsin", "Trypsin"],
-          "correctAnswer": "Amylase",
-          "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5476780/"
-        },
-        {
-          "question": "Which part of the nervous system controls the involuntary actions of digestion?",
-          "options": ["Somatic nervous system", "Autonomic nervous system", "Central nervous system", "Peripheral nervous system"],
-          "correctAnswer": "Autonomic nervous system",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK542191/"
-        },
-        {
-          "question": "What is the main function of the hepatic vein?",
-          "options": ["Carry oxygen-rich blood to the liver", "Transport bile", "Carry deoxygenated blood from the liver", "Filter toxins"],
-          "correctAnswer": "Carry deoxygenated blood from the liver",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK531476/"
-        },
-        {
-          "question": "What is the name of the valve between the left atrium and the left ventricle?",
-          "options": ["Tricuspid valve", "Mitral valve", "Aortic valve", "Pulmonary valve"],
-          "correctAnswer": "Mitral valve",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK538252/"
-        },
-        {
-          "question": "Which blood cells are primarily responsible for transporting oxygen?",
-          "options": ["Red blood cells", "White blood cells", "Platelets", "Lymphocytes"],
-          "correctAnswer": "Red blood cells",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK279393/"
-        },
-        {
-          "question": "What is the role of the ileocecal valve in the digestive system?",
-          "options": ["Control flow from small to large intestine", "Store bile", "Absorb nutrients", "Neutralize stomach acid"],
-          "correctAnswer": "Control flow from small to large intestine",
-          "link": "https://www.ncbi.nlm.nih.gov/books/NBK535425/"
-        }
-      ]
-    }                
+      "question": "What is the role of platelets in the blood?",
+      "options": [
+        "Fight infections",
+        "Clot blood",
+        "Carry oxygen",
+        "Absorb nutrients"
+      ],
+      "correctAnswer": "Clot blood",
+      "link": "https://www.hematology.org/education/patients/blood-clots/platelets"
+    },
+    {
+      "question": "Which vessel carries deoxygenated blood to the lungs?",
+      "options": ["Pulmonary artery", "Pulmonary vein", "Aorta", "Vena cava"],
+      "correctAnswer": "Pulmonary artery",
+      "link": "https://www.ncbi.nlm.nih.gov/medgen/67589"
+    },
+    {
+      "question": "What is the primary function of the small intestine?",
+      "options": [
+        "Store bile",
+        "Absorb nutrients",
+        "Filter waste",
+        "Digest proteins"
+      ],
+      "correctAnswer": "Absorb nutrients",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279401/"
+    },
+    {
+      "question": "Which hormone regulates water balance in the kidneys?",
+      "options": [
+        "Insulin",
+        "Antidiuretic hormone (ADH)",
+        "Thyroxine",
+        "Adrenaline"
+      ],
+      "correctAnswer": "Antidiuretic hormone (ADH)",
+      "link": "https://www.hormone.org/your-health-and-hormones/glands-and-hormones-a-to-z/hormones/antidiuretic-hormone"
+    },
+    {
+      "question": "What is the functional unit of the kidney?",
+      "options": ["Nephron", "Ureter", "Glomerulus", "Bowman's capsule"],
+      "correctAnswer": "Nephron",
+      "link": "https://www.kidney.org/atoz/content/nephron"
+    },
+    {
+      "question": "What is the role of the coronary arteries?",
+      "options": [
+        "Carry blood to the lungs",
+        "Supply blood to the heart muscle",
+        "Remove carbon dioxide",
+        "Absorb nutrients"
+      ],
+      "correctAnswer": "Supply blood to the heart muscle",
+      "link": "https://www.heart.org/en/health-topics/heart-attack/what-are-coronary-arteries"
+    },
+    {
+      "question": "What is the main function of the liver in digestion?",
+      "options": [
+        "Produce bile",
+        "Absorb nutrients",
+        "Store waste",
+        "Filter toxins"
+      ],
+      "correctAnswer": "Produce bile",
+      "link": "https://www.mayoclinic.org/tests-procedures/liver-function-tests/about/pac-20394595"
+    },
+    {
+      "question": "What is the largest artery in the human body?",
+      "options": [
+        "Carotid artery",
+        "Aorta",
+        "Pulmonary artery",
+        "Femoral artery"
+      ],
+      "correctAnswer": "Aorta",
+      "link": "https://www.ncbi.nlm.nih.gov/medgen/38807"
+    },
+    {
+      "question": "What is the name of the muscular contractions that move food through the digestive system?",
+      "options": ["Peristalsis", "Absorption", "Secretion", "Digestion"],
+      "correctAnswer": "Peristalsis",
+      "link": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/peristalsis"
+    },
+    {
+      "question": "What component of blood helps fight infections?",
+      "options": [
+        "Red blood cells",
+        "Platelets",
+        "White blood cells",
+        "Plasma"
+      ],
+      "correctAnswer": "White blood cells",
+      "link": "https://www.nhlbi.nih.gov/health-topics/blood-components"
+    },
+    {
+      "question": "Which organ is responsible for filtering blood in the body?",
+      "options": ["Kidneys", "Heart", "Liver", "Lungs"],
+      "correctAnswer": "Kidneys",
+      "link": "https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work"
+    },
+    {
+      "question": "Where does digestion begin in the human body?",
+      "options": ["Stomach", "Small intestine", "Mouth", "Esophagus"],
+      "correctAnswer": "Mouth",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279394/"
+    },
+    {
+      "question": "Which organ produces insulin?",
+      "options": ["Pancreas", "Liver", "Kidney", "Stomach"],
+      "correctAnswer": "Pancreas",
+      "link": "https://www.diabetes.org/diabetes/pancreas-function"
+    },
+    {
+      "question": "What is the role of hemoglobin in red blood cells?",
+      "options": [
+        "Clot blood",
+        "Transport oxygen",
+        "Absorb nutrients",
+        "Fight infections"
+      ],
+      "correctAnswer": "Transport oxygen",
+      "link": "https://www.nhlbi.nih.gov/health/hemoglobin"
+    },
+    {
+      "question": "What is the main function of the urinary bladder?",
+      "options": [
+        "Filter waste",
+        "Store urine",
+        "Produce urine",
+        "Excrete urea"
+      ],
+      "correctAnswer": "Store urine",
+      "link": "https://www.urologyhealth.org/urologic-conditions/bladder-health"
+    },
+    {
+      "question": "Which part of the heart receives deoxygenated blood from the body?",
+      "options": [
+        "Right atrium",
+        "Left atrium",
+        "Right ventricle",
+        "Left ventricle"
+      ],
+      "correctAnswer": "Right atrium",
+      "link": "https://www.ncbi.nlm.nih.gov/medgen/67589"
+    },
+    {
+      "question": "What structure stores and concentrates bile?",
+      "options": ["Liver", "Gallbladder", "Pancreas", "Small intestine"],
+      "correctAnswer": "Gallbladder",
+      "link": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/gallbladder-disease"
+    },
+    {
+      "question": "What is the primary purpose of saliva in digestion?",
+      "options": [
+        "Breaks down fats",
+        "Neutralizes acid",
+        "Moistens food",
+        "Absorbs nutrients"
+      ],
+      "correctAnswer": "Moistens food",
+      "link": "https://www.medicalnewstoday.com/articles/what-is-saliva"
+    },
+    {
+      "question": "What organ regulates blood pressure by releasing renin?",
+      "options": ["Heart", "Kidney", "Liver", "Lungs"],
+      "correctAnswer": "Kidney",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279327/"
+    },
+    {
+      "question": "Which blood vessels carry oxygen-rich blood from the lungs to the heart?",
+      "options": [
+        "Pulmonary arteries",
+        "Pulmonary veins",
+        "Aorta",
+        "Vena cava"
+      ],
+      "correctAnswer": "Pulmonary veins",
+      "link": "https://www.heart.org/en/health-topics/how-the-heart-works"
+    },
+    {
+      "question": "What is the role of the spleen in the circulatory system?",
+      "options": [
+        "Produce bile",
+        "Filter blood",
+        "Store vitamins",
+        "Regulate hormones"
+      ],
+      "correctAnswer": "Filter blood",
+      "link": "https://www.mayoclinic.org/symptoms/splenomegaly/basics/definition/sym-20050850"
+    },
+    {
+      "question": "What does the stomach secrete to aid in protein digestion?",
+      "options": ["Pepsin", "Amylase", "Lipase", "Bile"],
+      "correctAnswer": "Pepsin",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279255/"
+    },
+    {
+      "question": "What is the main component of plasma in the blood?",
+      "options": ["Proteins", "Water", "Glucose", "Salts"],
+      "correctAnswer": "Water",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279393/"
+    },
+    {
+      "question": "Which enzyme in the stomach begins the digestion of proteins?",
+      "options": ["Pepsin", "Trypsin", "Amylase", "Lipase"],
+      "correctAnswer": "Pepsin",
+      "link": "https://www.medicalnewstoday.com/articles/pepsin"
+    },
+    {
+      "question": "What organ stores vitamins A, D, E, and K?",
+      "options": ["Kidney", "Liver", "Heart", "Pancreas"],
+      "correctAnswer": "Liver",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279391/"
+    },
+    {
+      "question": "What part of the nephron filters blood?",
+      "options": [
+        "Glomerulus",
+        "Loop of Henle",
+        "Bowman's capsule",
+        "Collecting duct"
+      ],
+      "correctAnswer": "Glomerulus",
+      "link": "https://www.kidney.org/atoz/content/glomerulus"
+    },
+    {
+      "question": "Which structure in the small intestine increases surface area for absorption?",
+      "options": ["Villi", "Rugae", "Alveoli", "Cilia"],
+      "correctAnswer": "Villi",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4209942/"
+    },
+    {
+      "question": "What is the role of the pyloric sphincter?",
+      "options": [
+        "Control bile release",
+        "Prevent acid reflux",
+        "Regulate food flow to small intestine",
+        "Secrete digestive enzymes"
+      ],
+      "correctAnswer": "Regulate food flow to small intestine",
+      "link": "https://www.ncbi.nlm.nih.gov/medgen/55851"
+    },
+    {
+      "question": "Which part of the large intestine absorbs water?",
+      "options": ["Cecum", "Colon", "Rectum", "Appendix"],
+      "correctAnswer": "Colon",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK519522/"
+    },
+    {
+      "question": "What is the primary function of lymph in the circulatory system?",
+      "options": [
+        "Transport oxygen",
+        "Remove waste",
+        "Carry white blood cells",
+        "Distribute nutrients"
+      ],
+      "correctAnswer": "Carry white blood cells",
+      "link": "https://www.cancer.org/cancer/cancer-basics/lymph-nodes-and-cancer.html"
+    },
+    {
+      "question": "What substance is produced in the stomach to kill bacteria?",
+      "options": ["Bile", "Hydrochloric acid", "Saliva", "Pepsin"],
+      "correctAnswer": "Hydrochloric acid",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK441930/"
+    },
+    {
+      "question": "What is the purpose of bile salts in digestion?",
+      "options": [
+        "Digest proteins",
+        "Emulsify fats",
+        "Neutralize acid",
+        "Absorb glucose"
+      ],
+      "correctAnswer": "Emulsify fats",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5468756/"
+    },
+    {
+      "question": "What is the name of the process by which the kidneys produce urine?",
+      "options": ["Filtration", "Reabsorption", "Secretion", "Excretion"],
+      "correctAnswer": "Filtration",
+      "link": "https://www.niddk.nih.gov/health-information/kidney-disease/kidneys-how-they-work"
+    },
+    {
+      "question": "Which blood vessels have valves to prevent backflow?",
+      "options": ["Arteries", "Capillaries", "Veins", "Arterioles"],
+      "correctAnswer": "Veins",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK470443/"
+    },
+    {
+      "question": "What is the role of the esophagus in digestion?",
+      "options": [
+        "Store food",
+        "Transport food",
+        "Absorb nutrients",
+        "Produce enzymes"
+      ],
+      "correctAnswer": "Transport food",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK459336/"
+    },
+    {
+      "question": "Which part of the respiratory system is shared with the digestive system?",
+      "options": ["Pharynx", "Trachea", "Esophagus", "Bronchi"],
+      "correctAnswer": "Pharynx",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK459353/"
+    },
+    {
+      "question": "Which chamber of the heart receives oxygenated blood from the lungs?",
+      "options": [
+        "Right atrium",
+        "Left atrium",
+        "Right ventricle",
+        "Left ventricle"
+      ],
+      "correctAnswer": "Left atrium",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279326/"
+    },
+    {
+      "question": "What is the main function of the rectum?",
+      "options": [
+        "Absorb nutrients",
+        "Store waste",
+        "Produce bile",
+        "Filter toxins"
+      ],
+      "correctAnswer": "Store waste",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK499973/"
+    },
+    {
+      "question": "What is the structural difference between arteries and veins?",
+      "options": [
+        "Valves in veins",
+        "Thicker walls in veins",
+        "Valves in arteries",
+        "Thicker walls in capillaries"
+      ],
+      "correctAnswer": "Valves in veins",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK531493/"
+    },
+    {
+      "question": "What is the primary component of gastric juice?",
+      "options": ["Amylase", "Bile", "Hydrochloric acid", "Lipase"],
+      "correctAnswer": "Hydrochloric acid",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK441930/"
+    },
+    {
+      "question": "What is the primary function of the hepatic portal vein?",
+      "options": [
+        "Carry bile to the stomach",
+        "Transport blood from the liver to the heart",
+        "Carry nutrient-rich blood to the liver",
+        "Remove toxins from the liver"
+      ],
+      "correctAnswer": "Carry nutrient-rich blood to the liver",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5441273/"
+    },
+    {
+      "question": "Which part of the nephron is responsible for concentrating urine?",
+      "options": [
+        "Loop of Henle",
+        "Glomerulus",
+        "Proximal tubule",
+        "Collecting duct"
+      ],
+      "correctAnswer": "Loop of Henle",
+      "link": "https://www.kidney.org/atoz/content/nephron"
+    },
+    {
+      "question": "What prevents acid in the stomach from damaging the stomach wall?",
+      "options": ["Bile", "Enzymes", "Mucus", "Hormones"],
+      "correctAnswer": "Mucus",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK441930/"
+    },
+    {
+      "question": "What is the main function of the appendix in humans?",
+      "options": [
+        "Digest cellulose",
+        "Store waste",
+        "No significant function",
+        "Absorb water"
+      ],
+      "correctAnswer": "No significant function",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5440782/"
+    },
+    {
+      "question": "What is the functional unit of the liver?",
+      "options": ["Nephron", "Hepatocyte", "Lobule", "Sinusoid"],
+      "correctAnswer": "Lobule",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK532268/"
+    },
+    {
+      "question": "What is the function of the urethra in the urinary system?",
+      "options": [
+        "Filter blood",
+        "Store urine",
+        "Transport urine out of the body",
+        "Regulate water balance"
+      ],
+      "correctAnswer": "Transport urine out of the body",
+      "link": "https://www.urologyhealth.org/urologic-conditions/urethral-stricture"
+    },
+    {
+      "question": "Which vitamin is synthesized by the bacteria in the large intestine?",
+      "options": ["Vitamin C", "Vitamin B12", "Vitamin K", "Vitamin D"],
+      "correctAnswer": "Vitamin K",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5468756/"
+    },
+    {
+      "question": "What is the smallest structural and functional unit of life?",
+      "options": ["Tissue", "Cell", "Organ", "Molecule"],
+      "correctAnswer": "Cell",
+      "link": "https://www.britannica.com/science/cell-biology"
+    },
+    {
+      "question": "What type of blood cells are responsible for fighting infections?",
+      "options": [
+        "Red blood cells",
+        "White blood cells",
+        "Platelets",
+        "Plasma cells"
+      ],
+      "correctAnswer": "White blood cells",
+      "link": "https://www.medicalnewstoday.com/articles/what-are-white-blood-cells"
+    },
+    {
+      "question": "Which hormone regulates blood sugar levels?",
+      "options": ["Insulin", "Adrenaline", "Cortisol", "Glucagon"],
+      "correctAnswer": "Insulin",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279053/"
+    },
+    {
+      "question": "What is the largest artery in the human body?",
+      "options": [
+        "Aorta",
+        "Carotid artery",
+        "Pulmonary artery",
+        "Femoral artery"
+      ],
+      "correctAnswer": "Aorta",
+      "link": "https://www.britannica.com/science/aorta"
+    },
+    {
+      "question": "Which organ is primarily responsible for detoxification in the body?",
+      "options": ["Kidneys", "Liver", "Lungs", "Spleen"],
+      "correctAnswer": "Liver",
+      "link": "https://www.medicalnewstoday.com/articles/322380"
+    },
+    {
+      "question": "What is the primary function of hemoglobin in red blood cells?",
+      "options": [
+        "Carry oxygen",
+        "Clot blood",
+        "Fight infections",
+        "Regulate temperature"
+      ],
+      "correctAnswer": "Carry oxygen",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK226873/"
+    },
+    {
+      "question": "Which part of the brain controls balance and coordination?",
+      "options": ["Cerebrum", "Cerebellum", "Brainstem", "Hypothalamus"],
+      "correctAnswer": "Cerebellum",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK540992/"
+    },
+    {
+      "question": "What is the function of the epiglottis in the respiratory system?",
+      "options": [
+        "Filter air",
+        "Produce mucus",
+        "Prevent food from entering the trachea",
+        "Absorb oxygen"
+      ],
+      "correctAnswer": "Prevent food from entering the trachea",
+      "link": "https://www.britannica.com/science/epiglottis"
+    },
+    {
+      "question": "What is the powerhouse of the cell?",
+      "options": ["Ribosome", "Mitochondria", "Nucleus", "Golgi apparatus"],
+      "correctAnswer": "Mitochondria",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK547729/"
+    },
+    {
+      "question": "What is the primary role of the pancreas in digestion?",
+      "options": [
+        "Secrete insulin",
+        "Neutralize stomach acid",
+        "Produce digestive enzymes",
+        "Store bile"
+      ],
+      "correctAnswer": "Produce digestive enzymes",
+      "link": "https://www.niddk.nih.gov/health-information/digestive-diseases/pancreatitis/definition-facts"
+    },
+    {
+      "question": "What is the role of platelets in the blood?",
+      "options": [
+        "Transport oxygen",
+        "Clot blood",
+        "Fight infections",
+        "Regulate blood pressure"
+      ],
+      "correctAnswer": "Clot blood",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279393/"
+    },
+    {
+      "question": "What is the name of the protein that gives skin its strength and elasticity?",
+      "options": ["Collagen", "Keratin", "Elastin", "Actin"],
+      "correctAnswer": "Collagen",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK539844/"
+    },
+    {
+      "question": "Which part of the eye regulates the amount of light entering?",
+      "options": ["Lens", "Pupil", "Cornea", "Iris"],
+      "correctAnswer": "Iris",
+      "link": "https://www.britannica.com/science/iris-eye"
+    },
+    {
+      "question": "Which mineral is important for strong bones and teeth?",
+      "options": ["Iron", "Potassium", "Calcium", "Magnesium"],
+      "correctAnswer": "Calcium",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK560799/"
+    },
+    {
+      "question": "Which gland produces melatonin, a hormone that regulates sleep?",
+      "options": [
+        "Thyroid",
+        "Pineal gland",
+        "Adrenal gland",
+        "Pituitary gland"
+      ],
+      "correctAnswer": "Pineal gland",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK554608/"
+    },
+    {
+      "question": "What is the function of alveoli in the lungs?",
+      "options": ["Filter air", "Exchange gases", "Produce mucus", "Warm air"],
+      "correctAnswer": "Exchange gases",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK536960/"
+    },
+    {
+      "question": "What is the term for the study of tissues?",
+      "options": ["Histology", "Cytology", "Pathology", "Anatomy"],
+      "correctAnswer": "Histology",
+      "link": "https://www.britannica.com/science/histology"
+    },
+    {
+      "question": "What is the function of the eustachian tube in the ear?",
+      "options": [
+        "Transmit sound",
+        "Maintain pressure balance",
+        "Detect vibrations",
+        "Protect inner ear"
+      ],
+      "correctAnswer": "Maintain pressure balance",
+      "link": "https://www.britannica.com/science/eustachian-tube"
+    },
+    {
+      "question": "Which vitamin is essential for blood clotting?",
+      "options": ["Vitamin C", "Vitamin D", "Vitamin K", "Vitamin E"],
+      "correctAnswer": "Vitamin K",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK541081/"
+    },
+    {
+      "question": "Which organ system is responsible for producing hormones?",
+      "options": [
+        "Nervous system",
+        "Endocrine system",
+        "Digestive system",
+        "Circulatory system"
+      ],
+      "correctAnswer": "Endocrine system",
+      "link": "https://www.britannica.com/science/endocrine-system"
+    },
+    {
+      "question": "What is the role of the hypothalamus in the brain?",
+      "options": [
+        "Regulate emotions",
+        "Control homeostasis",
+        "Coordinate balance",
+        "Store memories"
+      ],
+      "correctAnswer": "Control homeostasis",
+      "link": "https://www.britannica.com/science/hypothalamus"
+    },
+    {
+      "question": "What is the main function of the spleen?",
+      "options": [
+        "Filter blood",
+        "Store bile",
+        "Produce insulin",
+        "Regulate hormones"
+      ],
+      "correctAnswer": "Filter blood",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK537311/"
+    },
+    {
+      "question": "What is the role of the thymus gland in the immune system?",
+      "options": [
+        "Produce T-cells",
+        "Filter lymph",
+        "Store antibodies",
+        "Produce red blood cells"
+      ],
+      "correctAnswer": "Produce T-cells",
+      "link": "https://www.britannica.com/science/thymus"
+    },
+    {
+      "question": "Which part of the ear converts sound waves into electrical signals?",
+      "options": ["Cochlea", "Eardrum", "Auditory canal", "Ossicles"],
+      "correctAnswer": "Cochlea",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279409/"
+    },
+    {
+      "question": "What is the main function of the lymphatic system?",
+      "options": [
+        "Transport oxygen",
+        "Drain excess fluids",
+        "Produce red blood cells",
+        "Store nutrients"
+      ],
+      "correctAnswer": "Drain excess fluids",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK538394/"
+    },
+    {
+      "question": "What is the primary function of the tricuspid valve in the heart?",
+      "options": [
+        "Prevent backflow of blood",
+        "Pump blood to the lungs",
+        "Oxygenate blood",
+        "Control blood pressure"
+      ],
+      "correctAnswer": "Prevent backflow of blood",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK537207/"
+    },
+    {
+      "question": "Which organ produces bile to aid in digestion?",
+      "options": ["Liver", "Stomach", "Pancreas", "Gallbladder"],
+      "correctAnswer": "Liver",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279391/"
+    },
+    {
+      "question": "Which part of the digestive system is primarily responsible for water absorption?",
+      "options": ["Small intestine", "Large intestine", "Stomach", "Esophagus"],
+      "correctAnswer": "Large intestine",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5557573/"
+    },
+    {
+      "question": "What is the primary role of the vena cava?",
+      "options": [
+        "Transport oxygenated blood to the body",
+        "Carry deoxygenated blood to the heart",
+        "Filter toxins from blood",
+        "Supply nutrients to tissues"
+      ],
+      "correctAnswer": "Carry deoxygenated blood to the heart",
+      "link": "https://www.ncbi.nlm.nih.gov/medgen/67589"
+    },
+    {
+      "question": "What is the function of the pyloric sphincter?",
+      "options": [
+        "Control food passage to small intestine",
+        "Store bile",
+        "Secrete digestive enzymes",
+        "Absorb nutrients"
+      ],
+      "correctAnswer": "Control food passage to small intestine",
+      "link": "https://www.ncbi.nlm.nih.gov/medgen/55851"
+    },
+    {
+      "question": "Which layer of the heart wall is responsible for contraction?",
+      "options": ["Epicardium", "Myocardium", "Endocardium", "Pericardium"],
+      "correctAnswer": "Myocardium",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK538474/"
+    },
+    {
+      "question": "Which structure in the nephron is involved in filtering blood?",
+      "options": [
+        "Glomerulus",
+        "Loop of Henle",
+        "Proximal tubule",
+        "Collecting duct"
+      ],
+      "correctAnswer": "Glomerulus",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK555856/"
+    },
+    {
+      "question": "What is the function of the sinoatrial (SA) node in the heart?",
+      "options": [
+        "Pump blood to lungs",
+        "Act as a pacemaker",
+        "Filter blood",
+        "Contract the ventricles"
+      ],
+      "correctAnswer": "Act as a pacemaker",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK538511/"
+    },
+    {
+      "question": "What type of blood vessel carries blood away from the heart?",
+      "options": ["Veins", "Arteries", "Capillaries", "Lymph vessels"],
+      "correctAnswer": "Arteries",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK538473/"
+    },
+    {
+      "question": "Which part of the brain regulates heart rate and breathing?",
+      "options": ["Cerebrum", "Cerebellum", "Medulla oblongata", "Pons"],
+      "correctAnswer": "Medulla oblongata",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK538486/"
+    },
+    {
+      "question": "What is the primary function of the Bowman's capsule in the nephron?",
+      "options": [
+        "Filter blood",
+        "Absorb water",
+        "Concentrate urine",
+        "Regulate pH"
+      ],
+      "correctAnswer": "Filter blood",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK538287/"
+    },
+    {
+      "question": "Which digestive enzyme is secreted by the salivary glands?",
+      "options": ["Amylase", "Lipase", "Pepsin", "Trypsin"],
+      "correctAnswer": "Amylase",
+      "link": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5476780/"
+    },
+    {
+      "question": "Which part of the nervous system controls the involuntary actions of digestion?",
+      "options": [
+        "Somatic nervous system",
+        "Autonomic nervous system",
+        "Central nervous system",
+        "Peripheral nervous system"
+      ],
+      "correctAnswer": "Autonomic nervous system",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK542191/"
+    },
+    {
+      "question": "What is the main function of the hepatic vein?",
+      "options": [
+        "Carry oxygen-rich blood to the liver",
+        "Transport bile",
+        "Carry deoxygenated blood from the liver",
+        "Filter toxins"
+      ],
+      "correctAnswer": "Carry deoxygenated blood from the liver",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK531476/"
+    },
+    {
+      "question": "What is the name of the valve between the left atrium and the left ventricle?",
+      "options": [
+        "Tricuspid valve",
+        "Mitral valve",
+        "Aortic valve",
+        "Pulmonary valve"
+      ],
+      "correctAnswer": "Mitral valve",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK538252/"
+    },
+    {
+      "question": "Which blood cells are primarily responsible for transporting oxygen?",
+      "options": [
+        "Red blood cells",
+        "White blood cells",
+        "Platelets",
+        "Lymphocytes"
+      ],
+      "correctAnswer": "Red blood cells",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK279393/"
+    },
+    {
+      "question": "What is the role of the ileocecal valve in the digestive system?",
+      "options": [
+        "Control flow from small to large intestine",
+        "Store bile",
+        "Absorb nutrients",
+        "Neutralize stomach acid"
+      ],
+      "correctAnswer": "Control flow from small to large intestine",
+      "link": "https://www.ncbi.nlm.nih.gov/books/NBK535425/"
+    }
   ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
