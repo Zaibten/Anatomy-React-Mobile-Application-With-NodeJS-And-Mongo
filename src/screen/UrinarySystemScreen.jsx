@@ -48,125 +48,135 @@ const UrinarySystemScreen = ({ navigation }) => {
   // HTML content for the 3D model (Sketchfab)
   const sketchfabHTML = `
     <!DOCTYPE html>
-    <html>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <style>
-          html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            background-color: #000; /* Black background */
-          }
-          iframe {
-            border: none;
-            width: 100%;
-            height: 100%;
-          }
-          #controls {
-            position: absolute;
-            bottom: 2px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            max-width: 500px;
-            box-sizing: border-box;
-            background-color: #1a1a1a;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-          }
-          .control-btn {
-            flex: 1;
-            margin: 0 5px;
-            padding: 10px 0;
-            background-color: #1a1a1a;
-            color: #d4d4d4;
-            font-size: 14px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-            transition: all 0.3s ease;
-            text-align: center;
-          }
-          .control-btn:hover {
-            background-color: #292929;
-            color: #ffffff;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7);
-          }
-          .control-btn:active {
-            transform: translateY(1px);
-            background-color: #333;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-          }
-        </style>
-      </head>
-      <body>
-        <iframe
-          title="Human Anatomy Final Version"
-          id="sketchfab-iframe"
-      src="https://sketchfab.com/models/6bd76e32ae2b4bccb810a08d3679e502/embed?autostart=1&annotations_visible=1"
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-        ></iframe>
-        <div id="controls">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #000; /* Black background */
+      }
+      iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+      }
+      #controls {
+        position: absolute;
+        bottom: 2px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        max-width: 500px;
+        box-sizing: border-box;
+        background-color: #1a1a1a;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      }
+      .control-btn {
+        flex: 1;
+        margin: 0 5px;
+        padding: 10px 0;
+        background-color: #1a1a1a;
+        color: #d4d4d4;
+        font-size: 11px;
+        border-radius: 8px;
+        border: 1px solid #333;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+      .control-btn:hover {
+        background-color: #292929;
+        color: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.7);
+      }
+      .control-btn:active {
+        transform: translateY(1px);
+        background-color: #333;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+    <script src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
+  </head>
+  <body>
+    <iframe
+      id="sketchfab-iframe"
+      src="https://sketchfab.com/models/6bd76e32ae2b4bccb810a08d3679e502/embed?autostart=1&annotations_visible=1&preload=true"
+      allow="autoplay; fullscreen; xr-spatial-tracking"
+      style="visibility: hidden;"
+      onload="this.style.visibility='visible';"
+    ></iframe>
+    <div id="controls">
           <button class="control-btn" onclick="sendMessage('anatomy')">Anatomy</button>
           <button class="control-btn" onclick="sendMessage('digestive')">Digestive</button>
           <button class="control-btn" onclick="sendMessage('respiratory')">Respiratory</button>
           <button class="control-btn" onclick="sendMessage('urinary')">Urinary</button>
+          <button class="control-btn" onclick="moveCamera('reset')">Reset</button>
         </div>
-        <script>
-          function sendMessage(action) {
-            window.ReactNativeWebView.postMessage(JSON.stringify({ action }));
-          }
-        </script>
-      </body>
-    </html>
-  `;
+    <script>
+      function sendMessage(action) {
+        window.ReactNativeWebView.postMessage(JSON.stringify({ action }));
+      }
 
-  const handleRefresh = () => {
-    if (webviewRef.current) {
-      webviewRef.current.reload();
-    }
-  };
+      // Camera position
+      const reset = { eye: [0, -8, 1], target: [0, 0, 0] };
+
+
+
+
+      // Initialize Sketchfab API
+      const iframe = document.getElementById('sketchfab-iframe');
+      const client = new Sketchfab('1.12.0', iframe);
+
+      let api;
+      client.init('6bd76e32ae2b4bccb810a08d3679e502', {
+        success: (apiInstance) => {
+          api = apiInstance;
+          api.start(); // Start playing the model immediately
+          api.setAutoSpin(true); // Optionally enable auto-spin
+        },
+        error: () => console.error('Failed to initialize Sketchfab API'),
+      });
+
+      // Move camera to predefined positions
+      function moveCamera(view) {
+        if (!api) {
+          console.error('API not initialized');
+          return;
+        }
+
+        let position;
+        switch (view) {
+          case 'reset':
+            position = reset;
+            break;
+          default:
+            position = reset; // Use reset position for default view
+        }
+
+        api.setCameraLookAt(position.eye, position.target, 1.5);
+      }
+    </script>
+  </body>
+</html>
+
+
+  `;
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* Refresh Button */}
-      <TouchableOpacity
-        style={[
-          styles.refreshButton,
-          {
-            
-          },
-        ]}
-        onPress={handleRefresh}
-      >
-        <Animated.Image
-          source={require("../assets/refresh.png")}
-          style={[
-            styles.refreshIcon,
-            {
-              transform: [
-                {
-                  rotate: rotateValue.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: ["0deg", "360deg"], // 360-degree rotation
-                  }),
-                },
-              ],
-            },
-          ]}
-        />
-      </TouchableOpacity>
-
       {/* 3D Model Section */}
       <View style={styles.webviewContainer}>
         <WebView

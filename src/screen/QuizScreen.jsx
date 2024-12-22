@@ -74,9 +74,9 @@ const Quiz = () => {
 
   // Function to navigate to Advancequiz
   const handleNavigateToAdvancequiz = () => {
-    // Check if score is not available ("--") or is less than 16
-    if (basicScore === '--' || basicScore < 16) {
-      setShowModal(true); // Show modal if basicScore is "--" or less than 16
+    // Check if score is not available ("--") or is less than 15
+    if (basicScore === '--' || basicScore < 15) {
+      setShowModal(true); // Show modal if basicScore is "--" or less than 15
     } else {
       navigation.navigate('AdvanceQuiz'); // Navigate to Advance Quiz otherwise
     }
@@ -84,7 +84,7 @@ const Quiz = () => {
 
 // Dynamic styling for Advance Quiz button
 const advanceButtonStyle = {
-  backgroundColor: basicScore === '--' || basicScore < 16 ? 'grey' : '#17a2b8', // Grey if basicScore is "--" or < 16, else teal
+  backgroundColor: basicScore === '--' || basicScore < 15 ? 'grey' : '#17a2b8', // Grey if basicScore is "--" or < 15, else teal
   ...styles.button, // Add existing button styles
 };
 
