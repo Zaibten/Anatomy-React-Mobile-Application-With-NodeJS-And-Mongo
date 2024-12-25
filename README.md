@@ -1,11 +1,9 @@
 # Anatomy 3D React Mobile Application 📱✨
-
 Welcome to **Anatomy 3D React Mobile Application**! This is a feature-rich mobile application designed to make learning about human anatomy interactive and engaging. With a 3D model interface, quizzes, and an integrated admin panel, users can dive deep into the **Urinary**, **Digestive**, and **Respiratory Systems** with ease. 🚀
 
 ---
 
 ##### 🌟 Features
-
 - Built with **React Native** and **Expo** for seamless cross-platform support.
 - Interactive **3D anatomy models** created in **Blender** and rendered in-app, covering:
   - Urinary System 💧
@@ -33,9 +31,6 @@ Welcome to **Anatomy 3D React Mobile Application**! This is a feature-rich mobil
 ---
 
 ##### 🔧 Setup Instructions
-
-##### 🔧 Setup Instructions
-
 1️⃣ **Clone the Repository**  
 ```bash
 git clone https://github.com/Muzamilofficial/anatomy-app.git
