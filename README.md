@@ -1,4 +1,4 @@
-# 🌐 Node.js Server - The Backbone of Anatomy App 🚀
+# 🌐 Anatomy React Mobile Appication 🚀
 
 💡 Anatomy’s powerful server-side architecture is built with Node.js, ensuring seamless functionality, scalability, and reliability. Designed to handle real-time data, email services, and backend operations, the Node.js server is the core engine driving this innovative learning app.
 
