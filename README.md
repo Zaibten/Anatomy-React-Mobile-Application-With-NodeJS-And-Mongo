@@ -1,42 +1,70 @@
-# 🌐 Node.js Server - The Backbone of Anatomy App 🚀
+# 🌐 Anatomy 3D React Mobile Application 📱✨
+Welcome to **Anatomy 3D React Mobile Application**! This is a feature-rich mobile application designed to make learning about human anatomy interactive and engaging. With a 3D model interface, quizzes, and an integrated admin panel, users can dive deep into the **Urinary**, **Digestive**, and **Respiratory Systems** with ease. 🚀
 
-💡 Anatomy’s powerful server-side architecture is built with Node.js, ensuring seamless functionality, scalability, and reliability. Designed to handle real-time data, email services, and backend operations, the Node.js server is the core engine driving this innovative learning app.
+---
 
-# 🔍 Key Features of the Node.js Server:
+## 🌟 Features
+- Built with **React Native** and **Expo** for seamless cross-platform support.
+- Interactive **3D anatomy models** created in **Blender** and rendered in-app, covering:
+  - Urinary System 💧
+  - Digestive System 🍽️
+  - Respiratory System 🌬️
+- Quizzes for users to test their knowledge:
+  - **Urinary System**
+  - **Digestive System**
+  - **Respiratory System**
+- Email integration via **SMTP** to send quiz results.
+- Admin panel hosted at [Zaibten Admin Panel](https://zaibtenbioscope.vercel.app/) to manage quizzes and users.
+- Backend hosted at [Anatomy Backend](https://anatomy-two.vercel.app/) to handle APIs, authentication, and email functionality.
 
-# 🛠️ Express Framework:
-•	Simplifies routing and middleware integration for smooth server management.
-•	Handles RESTful APIs for 3D model data, quiz functionalities, and email services.
+---
 
-# 📂 MongoDB Integration:
-•	Securely stores user data, quiz results, and 3D component details.
-•	Provides real-time access for personalized quiz feedback and learning progress tracking.
+## 🚀 Technologies Used
 
-# ✉️ Smart Email Services:
-•	Sends quiz results directly to users’ inboxes with Node.js email integration.
-•	Includes detailed performance reports with links to incorrect answers and recommended resources.
+- **Frontend (Mobile App):** React Native, Expo
+- **Admin Panel:** React.js
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB
+- **3D Models:** Blender
+- **Email Service:** SMTP
 
-# 📊 Real-Time Data Handling:
-•	Processes user interactions with 3D models and quizzes instantly.
-•	Supports dynamic rendering of data for a fluid user experience.
+---
 
-# 🧠 AI and ML Integration:
-•	Powers machine learning algorithms for quiz analysis and learning insights.
-•	Facilitates deep learning models for anatomy-related recommendations.
+## 🔧 Setup Instructions
+1️⃣ **Clone the Repository**  
+```bash
+git clone https://github.com/Muzamilofficial/anatomy-app.git
+cd anatomy-app
+cd backend
+npm install
+# Create a .env file and configure environment variables:
+# MONGO_URI=your_mongodb_connection_string
+# SMTP_USER=your_smtp_email
+# SMTP_PASS=your_smtp_password
+# PORT=5000
+npm start
+cd ../admin-panel
+npm install
+npm start
+cd ../mobile-app
+npm install
+expo start
+```
 
-# 🔐 Security First:
-•	Implements secure authentication and data encryption protocols.
-•	Ensures a safe and private experience for all users.
+## 🚀 Run and Enjoy!
+1. Mobile App: Use Expo Go or an emulator to preview.
+2. Admin Panel: Visit http://localhost:3000 or Zaibten Admin Panel.
+3. Backend API: Ensure the backend is running on your configured port.
 
-# ✨ Built for Scalability and Efficiency:
-•	Capable of handling high traffic and complex data queries.
-•	Designed to grow with user needs and feature expansions.
+## 🔗 Links
+1. Mobile App Repository: [GitHub Link](https://github.com/Muzamilofficial/Anatomy-React-Mobile-Application-With-NodeJS-And-Mongo)
+2. Admin Panel Live URL: [Zaibten Admin Panel](https://zaibtenbioscope.vercel.app/)
+3. Backend Live URL: [Anatomy Backend](https://anatomy-two.vercel.app/)
 
-# 💡 Node.js isn’t just a tool; it’s the heart of Anatomy’s backend operations!
-#NodeJS #ExpressJS #MongoDB #BackendDevelopment #MachineLearning #DeepLearning #EducationInnovation
-
+## 📧 Contact
+For questions or feedback, feel free to reach out at **muzamilkhanofficials@gmail.com**
+.
 # 📸 Some Screenshots of the Project 🖼️✨
-
 
 
 
