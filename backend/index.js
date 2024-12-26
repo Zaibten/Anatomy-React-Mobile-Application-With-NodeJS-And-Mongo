@@ -975,8 +975,6 @@ app.post('/fetchquizscores', async (req, res) => {
   }
 });
 
-
-
 // API endpoint to check email and send a styled email
 app.post('/check-email', async (req, res) => {
   const { email } = req.body;
@@ -1071,6 +1069,244 @@ app.post('/check-email', async (req, res) => {
     res.status(500).json({ success: false, message: 'An internal server error occurred. Please try again later.' });
   }
 });
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+// Render Update Password Page
+app.get('/update-password', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Anatomy Password Reset</title>
+      <link rel="icon" href="assets/images/logo.png">
+      <style>
+        /* General Reset */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body {
+          font-family: 'Arial', sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background: linear-gradient(135deg, #000, #434343);
+          color: #fff;
+          overflow: hidden;
+        }
+        .container {
+          width: 90%;
+          max-width: 400px;
+          background: #ffffff;
+          padding: 30px;
+          border-radius: 20px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+          text-align: center;
+          animation: slideIn 0.6s ease-out;
+        }
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .logo {
+          margin: 0 auto 20px;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          background: url('/assets/images/logo.png') no-repeat center center / cover;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+          font-size: 1.8rem;
+          margin-bottom: 20px;
+          color: #333;
+        }
+        .form-group {
+          margin-bottom: 15px;
+          text-align: left;
+          position: relative;
+        }
+        .form-group label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+          color: #555;
+        }
+        .form-group input {
+          width: 100%;
+          padding: 12px;
+          padding-right: 40px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 1rem;
+          transition: border-color 0.3s;
+        }
+        .form-group input:focus {
+          outline: none;
+          border-color: #007bff;
+          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .toggle-password {
+          cursor: pointer;
+          position: absolute;
+          right: 15px;
+          top: 65%;
+          transform: translateY(-50%);
+          font-size: 1.2rem;
+          color: #007bff;
+        }
+        .btn {
+          width: 100%;
+          background: #000;
+          color: #fff;
+          padding: 12px;
+          border: none;
+          border-radius: 10px;
+          font-size: 1rem;
+          cursor: pointer;
+          margin-top: 15px;
+          transition: background 0.3s ease;
+        }
+        .btn:hover {
+          background: #333;
+        }
+        .alert {
+          margin-bottom: 15px;
+          padding: 10px;
+          color: #fff;
+          border-radius: 5px;
+          text-align: center;
+          display: none;
+        }
+        .alert.success {
+          background-color: #28a745;
+        }
+        .alert.error {
+          background-color: #dc3545;
+        }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .container {
+            padding: 20px;
+          }
+          h1 {
+            font-size: 1.5rem;
+          }
+          .form-group input {
+            font-size: 0.9rem;
+          }
+          .btn {
+            font-size: 0.9rem;
+          }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="logo"></div>
+        <h1>Anatomy Password Reset</h1>
+        <div id="alert" class="alert"></div>
+        <form action="/update-password" method="POST" onsubmit="return validateForm()">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">New Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter new password" required>
+            <span class="toggle-password" onclick="togglePassword('password')">👁</span>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+            <span class="toggle-password" onclick="togglePassword('confirmPassword')">👁</span>
+          </div>
+          <button type="submit" class="btn">Update Password</button>
+        </form>
+      </div>
+      <script>
+        function togglePassword(fieldId) {
+          const field = document.getElementById(fieldId);
+          field.type = field.type === 'password' ? 'text' : 'password';
+        }
+
+        function validateForm() {
+          const password = document.getElementById('password').value;
+          const confirmPassword = document.getElementById('confirmPassword').value;
+          const alertBox = document.getElementById('alert');
+
+          if (password.length < 8) {
+            alertBox.textContent = 'Password must be at least 8 characters long.';
+            alertBox.className = 'alert error';
+            alertBox.style.display = 'block';
+            return false;
+          }
+
+          if (password !== confirmPassword) {
+            alertBox.textContent = 'Passwords do not match.';
+            alertBox.className = 'alert error';
+            alertBox.style.display = 'block';
+            return false;
+          }
+
+          alertBox.style.display = 'none';
+          return true;
+        }
+      </script>
+    </body>
+    </html>
+  `);
+});
+
+
+
+// Handle Password Update
+app.post('/update-password', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    // Debugging: Log input email
+    console.log(`Attempting to update password for email: ${email}`);
+
+    // Find user by email (case-insensitive)
+    const user = await User.findOne({ email: email.trim().toLowerCase() });
+
+    if (!user) {
+      console.log('User not found in database.');
+      return res.status(404).send('<script>alert("Invalid email. User not found."); window.location.href="/update-password";</script>');
+    }
+
+    console.log('User found:', user);
+
+    // Hash the new password and update
+    const hashedPassword = await bcrypt.hash(password, 10);
+    user.password = hashedPassword;
+    await user.save();
+
+    res.send('<script>alert("Password updated successfully!"); window.location.href="/update-password";</script>');
+  } catch (error) {
+    console.error('Error updating password:', error);
+    res.status(500).send('<script>alert("An error occurred. Please try again later."); window.location.href="/update-password";</script>');
+  }
+});
+
 
 
 // Start the server
