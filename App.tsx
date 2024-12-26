@@ -15,6 +15,7 @@ import DigestiveSystemScreen from "./src/screen/DigestiveSystemScreen";
 import Profile from "./src/screen/ProfileScreen";
 import OTPScreen from "./src/screen/OTPScreen";
 import BasicQuiz from "./src/screen/BaiscQuizScreen";
+import ForgetPassword from "./src/screen/ForgetPassword";
 
 // Create navigators
 const Tab = createBottomTabNavigator();
@@ -97,6 +98,8 @@ const App = () => {
 
         {/* Basic Quiz */}
         <Stack.Screen name="BasicQuiz" component={BasicQuiz} />
+
+        <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );

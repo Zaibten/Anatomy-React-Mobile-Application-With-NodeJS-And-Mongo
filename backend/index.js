@@ -205,7 +205,8 @@ app.get("/login-success", (req, res) => {
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Login Success</title>
+        <title>Anatomy Login Success</title>
+        <link rel="icon" href="assets/images/logo.png">
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <style>
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
@@ -643,6 +644,7 @@ app.get("/", (req, res) => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Anatomy Server</title>
+      <link rel="icon" href="assets/images/logo.png">
       <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
@@ -974,6 +976,101 @@ app.post('/fetchquizscores', async (req, res) => {
 });
 
 
+
+// API endpoint to check email and send a styled email
+app.post('/check-email', async (req, res) => {
+  const { email } = req.body;
+
+  try {
+    // Simulate a database query to find the user
+    const user = await User.findOne({ email });
+
+    if (user) {
+      const resetLink = 'https://www.google.com'; // Replace with your actual reset link
+
+      // Professional Email Template
+      const emailTemplate = `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #ddd; padding: 20px; background-color: #f9f9f9; border-radius: 10px;">
+          <!-- Logo Section -->
+          <div style="text-align: center; margin-bottom: 20px;">
+            <img src="cid:appLogo" alt="Company Logo" style="max-width: 150px;" />
+          </div>
+          <!-- Header -->
+          <h1 style="color: #333; text-align: center;">Anatomy Reset Your Password</h1>
+          <p style="font-size: 16px; color: #555; text-align: center; margin-top: 10px;">
+            Hello <strong>${user.name || 'User'}</strong>,
+          </p>
+          <p style="font-size: 16px; color: #555; text-align: center;">
+            You recently requested to reset your password for your account. Click the button below to reset it:
+          </p>
+          <!-- Reset Password Button -->
+          <div style="text-align: center; margin: 20px 0;">
+            <a href="${resetLink}" style="background-color: #007bff; color: white; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; font-weight: bold;">
+             Click To Reset Password
+            </a>
+          </div>
+          <p style="font-size: 14px; color: #555; text-align: center; margin-top: 10px;">
+            If you didn’t request this, you can safely ignore this email. Your password will remain unchanged.
+          </p>
+          <!-- Security Tips Section -->
+          <div style="background-color: #f1f1f1; padding: 15px; border-radius: 8px; margin-top: 20px;">
+            <h3 style="color: #007bff; font-size: 18px;">Security Tips:</h3>
+            <ul style="color: #555; font-size: 14px; padding-left: 20px;">
+              <li>Keep your password secure and do not share it with anyone.</li>
+              <li>Avoid using public Wi-Fi when accessing your account.</li>
+              <li>Enable two-factor authentication (if available).</li>
+            </ul>
+          </div>
+          <!-- Visit Website Section -->
+          <div style="text-align: center; margin-top: 20px;">
+            <a href="http://www.anatomy.com" style="background-color: #28a745; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-size: 16px; font-weight: bold;">
+              Visit Our Website
+            </a>
+          </div>
+          <!-- Footer -->
+          <footer style="background-color: #333; color: white; padding: 10px; text-align: center; margin-top: 30px; border-radius: 0 0 10px 10px;">
+            <p style="font-size: 14px; margin: 0;">&copy; 2024 Anatomy. All Rights Reserved.</p>
+            <p style="font-size: 12px; margin: 5px 0;">This is an automated email. Please do not reply.</p>
+            <p style="font-size: 12px; margin: 5px 0;">
+              <a href="http://www.anatomy.com/privacy" style="color: #fff; text-decoration: underline;">Privacy Policy</a> | 
+              <a href="http://www.anatomy.com/terms" style="color: #fff; text-decoration: underline;">Terms of Service</a>
+            </p>
+          </footer>
+        </div>
+      `;
+
+      // Mail Options
+      const mailOptions = {
+        from: process.env.SENDER_EMAIL,
+        to: email,
+        subject: 'Password Reset Request - Anatomy',
+        html: emailTemplate,
+        attachments: [
+          {
+            filename: 'logo.png',
+            path: path.resolve(__dirname, 'assets/images/logo.png'),
+            cid: 'appLogo', // Same as the "cid" in the <img> tag
+          },
+        ],
+      };
+
+      // Send the Email
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.error('Error sending email:', error);
+          return res.status(500).json({ success: false, message: 'Failed to send the email. Please try again later.' });
+        } else {
+          return res.status(200).json({ success: true, message: 'Email sent successfully!' });
+        }
+      });
+    } else {
+      return res.status(404).json({ success: false, message: 'No user found with this email address.' });
+    }
+  } catch (error) {
+    console.error('Server Error:', error);
+    res.status(500).json({ success: false, message: 'An internal server error occurred. Please try again later.' });
+  }
+});
 
 
 // Start the server

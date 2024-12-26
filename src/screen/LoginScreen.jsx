@@ -196,6 +196,10 @@ function LoginScreen({ navigation }) {
         <Text style={styles.linkText}>Don't have an account? Sign Up</Text>
       </TouchableOpacity>
 
+      <TouchableOpacity onPress={() => navigation.navigate("ForgetPassword")}>
+        <Text style={styles.linkText}>Forget Passsord ?</Text>
+      </TouchableOpacity>
+
       <Modal
         visible={showModal}
         transparent={true}
