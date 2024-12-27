@@ -17,6 +17,7 @@ import quizData from '../quiz.json'; // Adjust the path based on your project st
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
 import ParticleEffect from './ParticleEffect';
+import { WebView } from 'react-native-webview';
 
 
 const Quiz = () => {
@@ -40,6 +41,9 @@ const Quiz = () => {
   const [showExitModal, setShowExitModal] = useState(false); // State for the exit modal
   const [errorMessage, setErrorMessage] = useState(''); // Add this line
   const [showTimesUp, setShowTimesUp] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [currentLink, setCurrentLink] = useState('');
+
 
 
   useEffect(() => {
@@ -207,43 +211,81 @@ const Quiz = () => {
     setShowExitModal(false); // Close the modal after user's choice
   };
 
-  if (quizCompleted) {
-    return (
-      <View style={styles.container}>
-        {/* <ParticleEffect imageSource={require('../assets/particles.png')} /> */}
-        <ScrollView contentContainerStyle={styles.resultContainer}>
-          <Text style={styles.resultText}>🎉 Quiz Result!</Text>
-          <Text style={styles.resultText}>Your Score: {score}/20</Text>
-          {score >= 15 ? (
-            <Text style={styles.emoji}>🏆</Text>
-          ) : score >= 10 ? (
-            <Text style={styles.emoji}>👏</Text>
-          ) : (
-            <Text style={styles.emoji}>💡</Text>
-          )}
-          {incorrectLinks.length > 0 && (
-            <View style={styles.linksContainer}>
-              <Text style={styles.linksHeader}>Improve Your Knowledge:</Text>
-              {incorrectLinks.map((item, index) => (
-                <Text key={index} style={styles.linkText}>
-                  {item.question}: {item.link}
-                </Text>
-              ))}
-            </View>
-          )}
-          <Text style={styles.emailSuccessText}>
-            📧 Email sent to you successfully!
-          </Text>
-        </ScrollView>
 
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('HOME', {screen: 'Quiz'})}>
-          <Text style={styles.buttonText}>Go to Home</Text>
-        </TouchableOpacity>
+  const openLinkInModal = (link) => {
+    setCurrentLink(link);
+    setIsModalVisible(true);
+  };
+  
+  const closeModal = () => {
+    setIsModalVisible(false);
+    setCurrentLink('');
+  };
+
+  
+  if (quizCompleted) {
+// Place the modal rendering here so it is always available in the component's flow
+return (
+  <View style={styles.container}>
+    <Modal
+      visible={isModalVisible}
+      transparent={true}
+      animationType="slide"
+      onRequestClose={closeModal}
+    >
+      <View style={styles.modalOverlay}>
+        <View style={styles.modalContainer}>
+          <TouchableOpacity style={styles.closeButton} onPress={closeModal}>
+            <Text style={styles.closeButtonText}>✖</Text>
+          </TouchableOpacity>
+          <WebView
+            source={{ uri: currentLink }}
+            style={styles.webView}
+            startInLoadingState={true}
+          />
+        </View>
       </View>
-    );
+    </Modal>
+
+    {/* The rest of the quiz content */}
+    <ScrollView contentContainerStyle={styles.resultContainer}>
+      <Text style={styles.resultText}>🎉 Quiz Result!</Text>
+      <Text style={styles.resultText}>Your Score: {score}/20</Text>
+      {score >= 15 ? (
+        <Text style={styles.emoji}>🏆</Text>
+      ) : score >= 10 ? (
+        <Text style={styles.emoji}>👏</Text>
+      ) : (
+        <Text style={styles.emoji}>💡</Text>
+      )}
+      {incorrectLinks.map((item, index) => (
+        <TouchableOpacity
+          key={index}
+          onPress={() => openLinkInModal(item.link)}
+        >
+          <Text style={styles.linkText}>
+            {item.question}: {item.link}
+          </Text>
+        </TouchableOpacity>
+      ))}
+
+      <Text style={styles.emailSuccessText}>
+        📧 Email sent to you successfully!
+      </Text>
+    </ScrollView>
+
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => navigation.navigate('HOME', {screen: 'Quiz'})}
+    >
+      <Text style={styles.buttonText}>Go to Home</Text>
+    </TouchableOpacity>
+  </View>
+);
+
   }
+
+
   if (showTimesUp) {
     return (
       <View style={styles.container}>
@@ -581,5 +623,43 @@ buttonText: {
     fontSize: 16,
     fontWeight: 'bold',
   },
+  modalOverlay: {
+  flex: 1,
+  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+  justifyContent: 'center',
+  alignItems: 'center',
+},
+modalContainer: {
+  width: '90%',
+  height: '80%',
+  backgroundColor: '#fff',
+  borderRadius: 10,
+  overflow: 'hidden',
+},
+closeButton: {
+  height:30,
+  width:30,
+  position: 'absolute',
+  top: 10,
+  right: 10,
+  zIndex: 1,
+  padding: 1,
+  backgroundColor: 'red',  // Red background
+  borderRadius: 50,  // Fully rounded border
+  display: 'flex',  // Center the icon inside the button
+  justifyContent: 'center',  // Horizontally center the icon
+  alignItems: 'center',  // Vertically center the icon
+},
+
+closeButtonText: {
+  color: '#fff',  // White text for the icon
+  fontSize: 14,
+  fontWeight: 'bold',
+},
+
+webView: {
+  flex: 1,
+},
+
 });
 export default Quiz;
