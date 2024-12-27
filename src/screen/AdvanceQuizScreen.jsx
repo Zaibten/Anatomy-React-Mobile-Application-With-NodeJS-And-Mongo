@@ -20,7 +20,7 @@ import ParticleEffect from './ParticleEffect';
 import { WebView } from 'react-native-webview';
 
 
-const Quiz = () => {
+const AdvanceQuiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [score, setScore] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
@@ -95,7 +95,7 @@ const Quiz = () => {
     try {
       // Save Basic Quiz data in MongoDB
       const email = userEmail; // Replace with the logged-in user's email
-      await axios.post('https://anatomy-two.vercel.app/save-basic-quiz', {
+      await axios.post('https://anatomy-two.vercel.app/save-advance-quiz', {
         email,
         score, // BasicQuizMarks
       });
@@ -311,7 +311,7 @@ return (
       )}
 
       <Text style={styles.timerText}>⏳ Time Left: {timer}s</Text>
-      {/* <Text style={styles.title}>🧠 Basic Quiz</Text> */}
+      {/* <Text style={styles.title}>🧠 Advance Quiz</Text> */}
       <Text style={styles.score}>⭐ Score: {score}</Text>
       <Text style={styles.question}>{currentQuestion.question}</Text>
 
@@ -662,4 +662,4 @@ webView: {
 },
 
 });
-export default Quiz;
+export default AdvanceQuiz;

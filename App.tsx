@@ -16,6 +16,7 @@ import Profile from "./src/screen/ProfileScreen";
 import OTPScreen from "./src/screen/OTPScreen";
 import BasicQuiz from "./src/screen/BaiscQuizScreen";
 import ForgetPassword from "./src/screen/ForgetPassword";
+import AdvanceQuiz from "./src/screen/AdvanceQuizScreen";
 
 // Create navigators
 const Tab = createBottomTabNavigator();
@@ -98,6 +99,9 @@ const App = () => {
 
         {/* Basic Quiz */}
         <Stack.Screen name="BasicQuiz" component={BasicQuiz} />
+
+        {/* Basic Quiz */}
+        <Stack.Screen name="AdvanceQuiz" component={AdvanceQuiz} />
 
         <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
       </Stack.Navigator>
