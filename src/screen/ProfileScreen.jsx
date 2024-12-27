@@ -65,7 +65,7 @@ const Particle = ({ style }) => {
 
 const Profile = () => {
   const [userEmail, setUserEmail] = useState("User");
-  const [username, setUsername] = useState("Username");
+  const [username, setUsername] = useState("");
   const [showModal, setShowModal] = useState(false);
   const navigation = useNavigation();
 
@@ -78,6 +78,16 @@ const Profile = () => {
         const storedUsername = await AsyncStorage.getItem("username");
         if (storedEmail) setUserEmail(storedEmail);
         if (storedUsername) setUsername(storedUsername);
+        if (storedEmail) {
+          const response = await fetch(`https://anatomy-two.vercel.app/user?email=${storedEmail}`);
+          const data = await response.json();
+
+          if (response.ok) {
+            setUsername(data.username);
+          } else {
+            console.error("Error fetching username:", data.error);
+          }
+        }
       } catch (error) {
         console.error("Error fetching data from AsyncStorage:", error);
       }
@@ -130,10 +140,10 @@ const Profile = () => {
           <Text style={styles.value}>{userEmail || "Not available"}</Text>
         </Animated.View>
 
-        {/* <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
+        <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
           <Text style={styles.label}>Username</Text>
           <Text style={styles.value}>{username || "Not available"}</Text>
-        </Animated.View> */}
+        </Animated.View>
 
         {/* Navigation Links */}
       <View style={styles.linkContainer}>
