@@ -335,7 +335,23 @@ app.get('/home', async (req, res) => {
       }]
     };
     
+    let quizData = await Quiz.find(); // Fetch all quiz data from MongoDB
 
+    let quizTable = quizData
+        .map(
+            (quiz, index) => `
+          <tr>
+            <td class="text-center">${index + 1}</td>
+            <td>${quiz.email}</td>
+            <td class="text-center">${quiz.BasicQuiz ? 'Yes' : 'No'}</td>
+            <td class="text-center">${quiz.BasicQuizMarks || 'N/A'}</td>
+            <td class="text-center">${quiz.AdvanceQuiz !== null ? 'Yes' : 'No'}</td>
+            <td class="text-center">${quiz.AdvanceQuizMarks || 'N/A'}</td>
+          </tr>
+        `,
+        )
+        .join('');
+        
     let usersTable = users
       .map(
         (user, index) => `
@@ -750,7 +766,7 @@ app.get('/home', async (req, res) => {
         </div>        <div class="app-main">
                 <div class="app-sidebar sidebar-shadow">
                     <div class="app-header__logo">
-                        <div class="logo-src"></div>
+                         <div class="script-font">Anatomy</div>
                         <div class="header__pane ml-auto">
                             <div>
                                 <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
@@ -990,6 +1006,42 @@ app.get('/home', async (req, res) => {
                     </thead>
                     <tbody>
                         ${usersTable}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="row">
+ <!-- Quiz Table -->
+    <div class="col-md-12">
+        <div class="main-card mb-3 card">
+            <div class="card-header">Anatomy Quiz Activity
+                <div class="btn-actions-pane-right"></div>
+            </div>
+            <div class="table-responsive" style="
+                max-height: 400px; 
+                overflow-y: auto; 
+                scrollbar-width: thin; 
+                scrollbar-color: #888 #f1f1f1;">
+                <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Email</th>
+                            <th class="text-center">Basic Quiz</th>
+                            <th class="text-center">Basic Marks</th>
+                            <th class="text-center">Advanced Quiz</th>
+                            <th class="text-center">Advanced Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${quizTable}
                     </tbody>
                 </table>
             </div>
