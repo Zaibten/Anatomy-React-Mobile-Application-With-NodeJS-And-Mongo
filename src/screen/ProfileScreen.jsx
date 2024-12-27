@@ -67,6 +67,7 @@ const Profile = () => {
   const [userEmail, setUserEmail] = useState("User");
   const [username, setUsername] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [showAboutModal, setShowAboutModal] = useState(false);
   const navigation = useNavigation();
 
   const fadeAnim = useState(new Animated.Value(0))[0];
@@ -146,19 +147,19 @@ const Profile = () => {
         </Animated.View>
 
         {/* Navigation Links */}
-      <View style={styles.linkContainer}>
-        <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
-          <TouchableOpacity onPress={() => navigation.navigate("ForgetPassword")}>
-            <Text style={styles.linkText}>Forget Password</Text>
-          </TouchableOpacity>
-        </Animated.View>
+        <View style={styles.linkContainer}>
+          <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
+            <TouchableOpacity onPress={() => navigation.navigate("ForgetPassword")}>
+              <Text style={styles.linkText}>Forget Password</Text>
+            </TouchableOpacity>
+          </Animated.View>
 
-        <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
-          <TouchableOpacity onPress={() => navigation.navigate("AboutApp")}>
-            <Text style={styles.linkText}>About App</Text>
-          </TouchableOpacity>
-        </Animated.View>
-      </View>
+          <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
+            <TouchableOpacity onPress={() => setShowAboutModal(true)}>
+              <Text style={styles.linkText}>About Us</Text>
+            </TouchableOpacity>
+          </Animated.View>
+        </View>
 
         {/* Logout Button */}
         <TouchableOpacity style={styles.logoutButton} onPress={confirmLogout}>
@@ -188,6 +189,33 @@ const Profile = () => {
                 <Text style={styles.modalButtonText}>Logout</Text>
               </TouchableOpacity>
             </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* About Us Modal */}
+      <Modal visible={showAboutModal} transparent={true} animationType="slide">
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContainer2}>
+            <Text style={styles.modalTitle}>About App</Text>
+            <ScrollView>
+              <Text style={styles.modalMessage}>
+                Welcome to Anatomy 3D React Mobile Application! This is a
+                feature-rich mobile application designed to make learning about
+                human anatomy interactive and engaging. 🚀
+              </Text>
+              <Text style={styles.modalMessage}>
+                🌟 Features:
+                {"\n"}- Interactive 3D anatomy models
+                {"\n"}- Quizzes to test your knowledge
+              </Text>
+            </ScrollView>
+            <TouchableOpacity
+              style={[styles.modalButton2]}
+              onPress={() => setShowAboutModal(false)}
+            >
+              <Text style={styles.modalButtonText}>Close</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </Modal>
@@ -285,6 +313,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: "center",
   },
+  modalContainer2: {
+    width: "80%",
+    backgroundColor: "#1E2A38",
+    padding: 20,
+    borderRadius: 10,
+    alignItems: "center",
+    height: 370, // Set a fixed height for the modal
+  },
   modalTitle: {
     color: "#FFB84D",
     fontSize: 20,
@@ -304,6 +340,13 @@ const styles = StyleSheet.create({
   },
   modalButton: {
     flex: 1,
+    backgroundColor: "#FFB84D",
+    padding: 10,
+    marginHorizontal: 5,
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  modalButton2: {
     backgroundColor: "#FFB84D",
     padding: 10,
     marginHorizontal: 5,
