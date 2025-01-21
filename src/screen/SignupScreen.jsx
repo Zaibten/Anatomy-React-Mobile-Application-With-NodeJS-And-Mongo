@@ -133,7 +133,7 @@ function SignupScreen({ navigation }) {
       setErrorMessage("");
       setShowModal(false);
       try {
-        const response = await fetch("https://anatomy-two.vercel.app/signup", {
+        const response = await fetch("https://anatomy-fawn.vercel.app/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

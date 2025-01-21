@@ -95,7 +95,7 @@ const AdvanceQuiz = () => {
     try {
       // Save Basic Quiz data in MongoDB
       const email = userEmail; // Replace with the logged-in user's email
-      await axios.post('https://anatomy-two.vercel.app/save-advance-quiz', {
+      await axios.post('https://anatomy-fawn.vercel.app/save-advance-quiz', {
         email,
         score, // BasicQuizMarks
       });
@@ -104,7 +104,7 @@ const AdvanceQuiz = () => {
 
       // Send the completion email
       await axios.post(
-        'https://anatomy-two.vercel.app/send-quiz-completion-email',
+        'https://anatomy-fawn.vercel.app/send-quiz-completion-email',
         {
           email,
           score,

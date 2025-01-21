@@ -106,7 +106,7 @@ function LoginScreen({ navigation }) {
   const handleLogin = async () => {
     if (validateForm()) {
       try {
-        const response = await axios.post("https://anatomy-two.vercel.app/login", {
+        const response = await axios.post("https://anatomy-fawn.vercel.app/login", {
           email,
           password,
         });

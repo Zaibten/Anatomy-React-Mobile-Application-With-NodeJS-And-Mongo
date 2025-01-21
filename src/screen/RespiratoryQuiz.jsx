@@ -20,7 +20,7 @@ import ParticleEffect from './ParticleEffect';
 import { WebView } from 'react-native-webview';
 
 
-const Quiz = () => {
+const RespiratoryQuiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [score, setScore] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState([]);
@@ -662,4 +662,4 @@ webView: {
 },
 
 });
-export default Quiz;
+export default RespiratoryQuiz;

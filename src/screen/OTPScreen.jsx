@@ -143,7 +143,7 @@ const OTPScreen = ({ navigation }) => {
   const handleSubmit = async () => {
     setIsLoading(true);
     try {
-      const response = await axios.post("https://anatomy-two.vercel.app/verify", {
+      const response = await axios.post("https://anatomy-fawn.vercel.app/verify", {
         otp: value,
       });
 

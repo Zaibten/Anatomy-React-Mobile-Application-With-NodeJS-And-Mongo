@@ -28,7 +28,7 @@ const ForgetPassword = () => {
     if (email && validateEmail(email)) {
       try {
         // Send email to backend for validation
-        const response = await axios.post('https://anatomy-two.vercel.app/check-email', { email });
+        const response = await axios.post('https://anatomy-fawn.vercel.app/check-email', { email });
         if (response.data.success) {
           setShowModal(true); // Show success modal
         } else {

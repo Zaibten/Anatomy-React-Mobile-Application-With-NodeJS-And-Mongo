@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 
 
-const Quiz = () => {
+const RespiratoryQuiz = () => {
   const [userEmail, setUserEmail] = useState(null);
   const [userToken, setUserToken] = useState(null);
   const [basicScore, setBasicScore] = useState('--');
@@ -311,4 +311,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Quiz;
+export default RespiratoryQuiz;

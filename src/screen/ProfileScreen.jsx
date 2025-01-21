@@ -80,7 +80,7 @@ const Profile = () => {
         if (storedEmail) setUserEmail(storedEmail);
         if (storedUsername) setUsername(storedUsername);
         if (storedEmail) {
-          const response = await fetch(`https://anatomy-two.vercel.app/user?email=${storedEmail}`);
+          const response = await fetch(`https://anatomy-fawn.vercel.app/user?email=${storedEmail}`);
           const data = await response.json();
 
           if (response.ok) {
