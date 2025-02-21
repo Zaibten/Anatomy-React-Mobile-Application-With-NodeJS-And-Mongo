@@ -9,6 +9,7 @@ import {
   Dimensions,
   Animated,
   ScrollView,
+  ActivityIndicator,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
@@ -72,6 +73,33 @@ const Profile = () => {
 
   const fadeAnim = useState(new Animated.Value(0))[0];
 
+  const [quizHistory, setQuizHistory] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchQuizHistory = async () => {
+      try {
+        const storedEmail = await AsyncStorage.getItem("userEmail");
+        if (storedEmail) {
+          setUserEmail(storedEmail);
+          const response = await fetch(`https://anatomy-fawn.vercel.app/quiz-history?email=${storedEmail}`);
+          const data = await response.json();
+
+          if (response.ok) {
+            setQuizHistory(data.history);
+          } else {
+            console.error("Error fetching quiz history:", data.message);
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching quiz history:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchQuizHistory();
+  }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -95,6 +123,7 @@ const Profile = () => {
     };
 
     fetchData();
+    
 
     Animated.timing(fadeAnim, {
       toValue: 1,
@@ -145,6 +174,29 @@ const Profile = () => {
           <Text style={styles.label}>Username</Text>
           <Text style={styles.value}>{username || "Not available"}</Text>
         </Animated.View>
+
+        {/* Show User Quiz History */}
+        <View style={styles.container}>
+      <Text style={styles.header}>Last 3 Quiz History</Text>
+      {loading ? (
+        <ActivityIndicator size="large" color="#FFB84D" />
+      ) : quizHistory.length > 0 ? (
+        <ScrollView horizontal contentContainerStyle={styles.historyContainer}>
+          {quizHistory.map((quiz, index) => (
+            <View key={index} style={styles.quizCard}>
+              <Text style={styles.attemptText}>Quiz History {quiz.attempt}</Text>
+              <Text style={styles.quizText}>Basic Quiz: {quiz.BasicQuiz ? "Yes" : "No"}</Text>
+              <Text style={styles.quizText}>Basic Quiz Marks: {quiz.BasicQuizMarks}</Text>
+              <Text style={styles.quizText}>Advanced Quiz: {quiz.AdvanceQuiz ? "Yes" : "No"}</Text>
+              <Text style={styles.quizText}>Advanced Quiz Marks: {quiz.AdvanceQuizMarks}</Text>
+              <Text style={styles.dateText}>Date: {quiz.date}</Text>
+            </View>
+          ))}
+        </ScrollView>
+      ) : (
+        <Text style={styles.noDataText}>No quiz history found.</Text>
+      )}
+    </View>
 
         {/* Navigation Links */}
         <View style={styles.linkContainer}>
@@ -224,6 +276,53 @@ const Profile = () => {
 };
 
 const styles = StyleSheet.create({
+header: {
+  fontSize: 24,
+  fontWeight: "bold",
+  color: "#FFB84D",
+  marginBottom: 20,
+  textAlign: "center",  // Centers text horizontally
+  alignSelf: "center",  // Ensures the element is centered
+},
+
+  historyContainer: {
+    flexDirection: "row", // Align cards in a row
+    alignItems: "center",
+    paddingVertical: 20,
+  },
+  quizCard: {
+    width: 200, // Set fixed width for consistency
+    backgroundColor: "#2A2A2A",
+    padding: 15,
+    borderRadius: 10,
+    marginHorizontal: 10, // Space between boxes
+    elevation: 5, // Shadow effect
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+  },
+  attemptText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#FFB84D",
+    marginBottom: 5,
+  },
+  quizText: {
+    fontSize: 16,
+    color: "#FFF",
+    marginBottom: 3,
+  },
+  dateText: {
+    fontSize: 14,
+    color: "#AAA",
+    marginTop: 5,
+  },
+  noDataText: {
+    fontSize: 18,
+    color: "#FFF",
+  },
+
   container: {
     flex: 1,
     backgroundColor: "#0D2538",
@@ -262,6 +361,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: "#A1C4D4",
   },
+
   infoCard: {
     backgroundColor: "#26334B",
     width: "90%",
