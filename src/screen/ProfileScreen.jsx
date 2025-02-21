@@ -75,7 +75,16 @@ const Profile = () => {
 
   const [quizHistory, setQuizHistory] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [refreshKey, setRefreshKey] = useState(0); // Key to force re-render
 
+   // Refresh Function
+   const refreshPage = () => {
+    setLoading(true);
+    // Simulating an API call or refresh delay
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000); // Change this to your actual refresh logic
+  };
   useEffect(() => {
     const fetchQuizHistory = async () => {
       try {
@@ -98,7 +107,7 @@ const Profile = () => {
       }
     };
     fetchQuizHistory();
-  }, []);
+  }, [refreshKey]); // Re-run on refresh
 
   useEffect(() => {
     const fetchData = async () => {
@@ -130,7 +139,8 @@ const Profile = () => {
       duration: 1000,
       useNativeDriver: true,
     }).start();
-  }, [fadeAnim]);
+  }, [fadeAnim, refreshKey]); // Re-run on refresh
+
 
   const confirmLogout = () => setShowModal(true);
 
@@ -164,6 +174,20 @@ const Profile = () => {
           <Text style={styles.emailText}>Profile Section</Text>
         </Animated.View>
 
+        {/* Refresh and About Us Buttons */}
+<View style={{ flexDirection: 'row'}}>
+      <TouchableOpacity style={styles.refreshButton} onPress={refreshPage} disabled={loading}>
+        {loading ? (
+          <ActivityIndicator size="small" color="#fff" />
+        ) : (
+          <Text style={styles.refreshText}>🔄 Refresh</Text>
+        )}
+      </TouchableOpacity>
+  <TouchableOpacity style={styles.aboutButton} onPress={() => setShowAboutModal(true)}>
+    <Text style={styles.aboutText}>ℹ️ About Us</Text>
+  </TouchableOpacity>
+</View>
+
         {/* User Info Section */}
         <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
           <Text style={styles.label}>Your Email</Text>
@@ -177,7 +201,7 @@ const Profile = () => {
 
         {/* Show User Quiz History */}
         <View style={styles.container}>
-      <Text style={styles.header}>Last 3 Quiz History</Text>
+      <Text style={styles.header}>Quiz History</Text>
       {loading ? (
         <ActivityIndicator size="large" color="#FFB84D" />
       ) : quizHistory.length > 0 ? (
@@ -206,11 +230,11 @@ const Profile = () => {
             </TouchableOpacity>
           </Animated.View>
 
-          <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
+          {/* <Animated.View style={[styles.infoCard, { opacity: fadeAnim }]}>
             <TouchableOpacity onPress={() => setShowAboutModal(true)}>
               <Text style={styles.linkText}>About Us</Text>
             </TouchableOpacity>
-          </Animated.View>
+          </Animated.View> */}
         </View>
 
         {/* Logout Button */}
@@ -285,6 +309,32 @@ header: {
   alignSelf: "center",  // Ensures the element is centered
 },
 
+refreshButton: {
+  alignSelf: "flex-end",
+  margin: 10,
+  padding: 10,
+  backgroundColor: "#2A2A2A",
+  borderRadius: 10,
+  justifyContent: 'center',
+  minWidth: 100, // Ensures space for loader and text
+},
+refreshText: {
+  fontSize: 12,
+  fontWeight: "bold",
+  color: "#FFF",
+},
+aboutButton: {
+  alignSelf: "flex-end",
+  margin: 10,
+  padding: 10,
+  backgroundColor: "#2A2A2A",
+  borderRadius: 10,
+},
+aboutText: {
+  fontSize: 12,
+  fontWeight: "bold",
+  color: "#FFF",
+},
   historyContainer: {
     flexDirection: "row", // Align cards in a row
     alignItems: "center",

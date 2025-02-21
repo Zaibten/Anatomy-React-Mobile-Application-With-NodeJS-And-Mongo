@@ -1,16 +1,62 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Pressable, StyleSheet, Animated, Modal, Image, ScrollView, TouchableOpacity } from 'react-native'; // Add TouchableOpacity import here
+import { View, Text, Pressable, StyleSheet, Animated, Modal, ActivityIndicator, Image, ScrollView, TouchableOpacity } from 'react-native'; // Add TouchableOpacity import here
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
-
+import { WebView } from 'react-native-webview';
+import { Linking } from 'react-native';
 
 const Quiz = () => {
   const [userEmail, setUserEmail] = useState(null);
   const [userToken, setUserToken] = useState(null);
   const [basicScore, setBasicScore] = useState('--');
   const [advanceScore, setAdvanceScore] = useState('--');
+  const [refreshKey, setRefreshKey] = useState(0); // Key to force re-render
+  const [quizHistory, setQuizHistory] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [showWebView, setShowWebView] = useState(false);
 
+
+  const handleDownload = () => {
+    const downloadUrl = `https://anatomy-fawn.vercel.app/download-quiz-history?email=${userEmail}`;
+    Linking.openURL(downloadUrl).catch((err) =>
+      console.error("Failed to open URL:", err)
+    );
+  };
+
+     // Refresh Function
+     const refreshPage = () => {
+      setLoading(true);
+      // Simulating an API call or refresh delay
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000); // Change this to your actual refresh logic
+    };
+
+    useEffect(() => {
+      const fetchQuizHistory = async () => {
+        try {
+          const storedEmail = await AsyncStorage.getItem("userEmail");
+          if (storedEmail) {
+            setUserEmail(storedEmail);
+            const response = await fetch(`https://anatomy-fawn.vercel.app/quiz-history?email=${storedEmail}`);
+            const data = await response.json();
+  
+            if (response.ok) {
+              setQuizHistory(data.history);
+            } else {
+              console.error("Error fetching quiz history:", data.message);
+            }
+          }
+        } catch (error) {
+          console.error("Error fetching quiz history:", error);
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchQuizHistory();
+    }, []);
+    
   useEffect(() => {
     const fetchUserEmail = async () => {
       try {
@@ -25,7 +71,7 @@ const Quiz = () => {
     };
 
     fetchUserEmail();
-  }, []);
+  }, [refreshKey]);
 
 
   const fetchScores = async (email) => {
@@ -46,8 +92,6 @@ const Quiz = () => {
     }
   };
   
-
-
   const navigation = useNavigation();
 
   // State to control modal visibility
@@ -74,9 +118,9 @@ const Quiz = () => {
 
   // Function to navigate to Advancequiz
   const handleNavigateToAdvancequiz = () => {
-    // Check if score is not available ("--") or is less than 15
-    if (basicScore === '--' || basicScore < 15) {
-      setShowModal(true); // Show modal if basicScore is "--" or less than 15
+    // Check if score is not available ("--") or is less than 40
+    if (basicScore === '--' || basicScore < 40) {
+      setShowModal(true); // Show modal if basicScore is "--" or less than 40
     } else {
       navigation.navigate('AdvanceQuiz'); // Navigate to Advance Quiz otherwise
     }
@@ -84,7 +128,7 @@ const Quiz = () => {
 
 // Dynamic styling for Advance Quiz button
 const advanceButtonStyle = {
-  backgroundColor: basicScore === '--' || basicScore < 15 ? 'grey' : '#17a2b8', // Grey if basicScore is "--" or < 15, else teal
+  backgroundColor: basicScore === '--' || basicScore < 40 ? 'grey' : '#17a2b8', // Grey if basicScore is "--" or < 40, else teal
   ...styles.button, // Add existing button styles
 };
 
@@ -109,6 +153,50 @@ const advanceButtonStyle = {
         </View>
       </View>
 
+    {/* Show Quiz History */}
+<View style={styles.tablecontainer}>
+<Text style={styles.cardTitle}>Lastest Attempts</Text>
+  {loading ? (
+    <ActivityIndicator size="large" color="#FFB84D" />
+  ) : quizHistory.length > 0 ? (
+    <ScrollView style={styles.historyContainer}>
+      <View style={styles.table}>
+        <View style={styles.tableHeader}>
+          <Text style={styles.headerCell}>📌 Attempt</Text>
+          <Text style={styles.headerCell}>📝 Basic Quiz</Text>
+          <Text style={styles.headerCell}>🚀 Advanced Quiz</Text>
+        </View>
+        {quizHistory.map((quiz, index) => (
+          <View key={index} style={styles.tableRow}>
+            <Text style={styles.cell}>{quiz.attempt}</Text>
+            <Text style={styles.cell}>{quiz.BasicQuiz ? "Pass ✅" : "Locked 🔒"}</Text>
+            <Text style={styles.cell}>{quiz.AdvanceQuiz ? "Pass ✅" : "Locked 🔒"}</Text>
+          </View>
+        ))}
+      </View>
+    </ScrollView>
+  ) : (
+    <Text style={styles.noDataText}>🚫 No quiz history found.</Text>
+  )}
+</View>
+
+      {/* Refresh & Download Buttons */}
+      <View style={{ flexDirection: 'row', alignItems: 'center',}}>
+      <TouchableOpacity style={styles.refreshButton} onPress={refreshPage} disabled={loading}>
+        {loading ? (
+          <ActivityIndicator size="small" color="#fff" />
+        ) : (
+          <Text style={styles.refreshText}>🔄 Refresh Table</Text>
+        )}
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.refreshButton} onPress={handleDownload} disabled={loading}>
+        {loading ? (
+          <ActivityIndicator size="small" color="#fff" />
+        ) : (
+          <Text style={styles.refreshText}>📥 Download All Record</Text>
+        )}
+      </TouchableOpacity>
+    </View>
       <Text style={styles.cardTitle}>{userEmail}</Text>
 
       {/* Interactive Buttons in Row */}
@@ -168,10 +256,57 @@ const advanceButtonStyle = {
 };
 
 const styles = StyleSheet.create({
+  table: {
+  borderWidth: 1,
+  borderColor: '#ddd',
+  borderRadius: 10,
+  overflow: 'hidden',
+},
+tableHeader: {
+  flexDirection: 'row',
+  backgroundColor: '#344955',
+  paddingVertical: 10,
+},
+headerCell: {
+  flex: 1,
+  fontWeight: 'bold',
+  textAlign: 'center',
+  color: '#fff',
+},
+tableRow: {
+  flexDirection: 'row',
+  backgroundColor: '#fff',
+  borderBottomWidth: 1,
+  borderColor: '#ddd',
+  paddingVertical: 8,
+},
+cell: {
+  flex: 1,
+  textAlign: 'center',
+  color: '#333',
+},
+
+  refreshButton: {
+  alignSelf: "flex-end",
+  margin: 20,
+  left: 0,
+  padding: 10,
+  backgroundColor: "#2A2A2A",
+  borderRadius: 10,
+  justifyContent: 'center',
+  minWidth: 100, // Ensures space for loader and text
+},
+refreshText: {
+  fontSize: 12,
+  fontWeight: "bold",
+  color: "#FFF",
+},
   container: {
     backgroundColor: '#F4F6F9', // Light background for better contrast
     paddingHorizontal: 20,
-    paddingVertical: 30,
+  },
+  tablecontainer: {
+    backgroundColor: '#F4F6F9', // Light background for better contrast
   },
   header: {
     width: '100%',
@@ -211,7 +346,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginBottom: 22,
   },
   card: {
     backgroundColor: '#FFFFFF',
